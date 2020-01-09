@@ -1381,7 +1381,7 @@ ul {
   color: $text_color;
 }
 
-.icon-star::before {
+.icon-star {
   color: $brand_color;
   font-size: 18px;
 }
