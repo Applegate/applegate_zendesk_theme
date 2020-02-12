@@ -171,7 +171,7 @@ a {
 .button, %button {
   @include transition(all, 100ms, linear);
   background-color: $bright-green;
-  background-image: url("../../assets/textures/button-wide-crop.png");
+  background-image: url($assets-button-wide-crop-png);
   background-size: 508px;
   background-position: center;
   border: none;
@@ -2634,7 +2634,7 @@ input:disabled {
   .hint {
     .success,
     .error {
-      background-image: url("../../assets/textures/button-wide-crop.png");
+      background-image: url($assets-button-wide-crop-png);
       border-radius: 3px;
       margin: 5px 0;
       padding: 5px 10px;
