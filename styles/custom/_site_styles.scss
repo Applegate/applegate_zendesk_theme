@@ -1,0 +1,2897 @@
+// ================
+// TYPOGRAPHY
+// ================
+* {
+  font-family: $lato;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  // line-height: 1;
+}
+h1,h2,h3 {
+  font-family: $kapra;
+}
+h4, h5, h6 {
+  font-family: $lato;
+}
+.h1, h1 {
+  font-size: 40px;
+  letter-spacing: 1px;
+}
+.h2, h2 {
+  font-size: 30px;
+}
+.h2--responsive {
+  font-size: 24px;
+  line-height: 1.2;
+  @media only screen and (min-width: $medium-screen) {
+    font-size: 30px;
+  }
+}
+.h3, h3 {
+  font-size: 26px;
+}
+.h4, h4 {
+  font-size: 24px;
+}
+.h5, h5 {
+  font-size: 22px;
+}
+.h6, h6 {
+  font-size: 20px;
+}
+.p, p {
+  font-size: 16px;
+  letter-spacing: normal;
+  line-height: 1.5;
+}
+span {
+  font-family: inherit;
+}
+.small {
+  font-size: 14px;
+  @media only screen and (max-width: $small-screen) {
+    font-size: 13px;
+  }
+}
+.footnote {
+  font-size: 10px;
+  vertical-align: text-top;
+}
+.xsmall {
+  font-size: 11px;
+  @media only screen and (max-width: $small-screen) {
+    font-size: 10px;
+  }
+}
+.font--green {
+  color: $green;
+}
+.font--dark-green {
+  color: $dark-green;
+}
+.lato, %lato {
+  font-family: $lato;
+}
+.kapra, %kapra {
+  font-family: $kapra;
+}
+.kapra-bold, %kapra-bold {
+  font-family: $kapra-bold;
+}
+.gotham, %gotham {
+  font-family: $gotham;
+}
+.gotham-bold, %gotham-bold {
+  font-family: $gotham;
+  font-style: normal;
+  font-weight: 700;
+}
+.tiny-trademark {
+  font-size: 8px;
+  top: -1em;
+}
+.headline {
+  @extend %kapra-bold;
+  color: $off-black;
+  line-height: 1.2;
+  i, em, sup {
+    @extend %kapra-bold;
+  }
+}
+.headline--secondary {
+  @extend .uppercase;
+  @extend %kapra-bold;
+  color: $off-black;
+  line-height: 1.2;
+}
+.headline--black {
+  @extend .headline;
+  color: $black;
+}
+.translucent {
+  opacity: 0.4;
+}
+
+.icon--large {
+  font-size: 50px;
+  @media only screen and (max-width: $small-screen) {
+    font-size: 40px;
+  }
+}
+
+
+// ===============
+// LINKS AND BUTTONS
+// ===============
+.link--green {
+  color: $dark-green;
+  &:hover {
+    color: $black;
+    text-decoration: underline;
+  }
+  @media only screen and (max-width: $xsmall-screen) {
+    &:hover, &:active {
+      text-decoration: none;
+    }
+  }
+}
+a {
+  color: $off-black;
+  text-decoration: none;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $off-black;
+    text-decoration: none;
+  }
+  .green--links & {
+    @extend .link--green;
+    &:hover {
+      text-decoration: underline;
+    }
+    @media only screen and (max-width: $xsmall-screen) {
+      &:hover, &:active {
+        text-decoration: none;
+      }
+    }
+  }
+}
+.links--underline {
+  &:hover, a:hover {
+    text-decoration: underline;
+  }
+  @media only screen and (max-width: $xsmall-screen) {
+    &:hover, &:active {
+      text-decoration: none;
+    }
+  }
+}
+.button, %button {
+  @include transition(all, 100ms, linear);
+  background-color: $bright-green;
+  background-image: url("../../assets/textures/button-wide-crop.png");
+  background-size: 508px;
+  background-position: center;
+  border: none;
+  font-size: 16px;
+  @extend %border-radius--uneven;
+  &:hover, &:focus {
+    background-color: darken($bright-green, 7%);
+    border-color: darken($bright-green, 7%);
+    text-decoration: none !important;
+  }
+}
+.button--medium {
+  font-size: 16px;
+  @media only screen and (min-width: $small-screen) {
+    font-size: 18px;
+  }
+  @media only screen and (min-width: $medium-screen) {
+    font-size: 20px;
+  }
+}
+.button--large {
+  font-size: 18px;
+  @media only screen and (min-width: $small-screen) {
+    font-size: 22px;
+  }
+  @media only screen and (min-width: $medium-screen) {
+    font-size: 24px;
+  }
+}
+.button--outline,
+%button--outline {
+  @include transition(all, 100ms, linear);
+  border: 1px solid $white;
+  color: $white;
+  font-size: 18px;
+  line-height: 1;
+  padding: .85em 1em;
+  @extend %border-radius--uneven;
+  &:hover, &:focus {
+    background-color: $white;
+    color: $off-black;
+    text-decoration: none;
+  }
+  @media only screen and (max-width: $small-screen) {
+    font-size: 16px;
+  }
+  &.button--outline--green {
+    border: 2px solid $dark-green;
+    color: $dark-green;
+    &:hover, &:focus {
+      background-color: $dark-green;
+      color: $white;
+    }
+  }
+}
+.button--narrow {
+  padding: 10px 15px;
+}
+.button--long {
+  padding: 15px 25px;
+}
+.button--small {
+  @include transition(all, 100ms, linear);
+  background-color: $dark-green;
+  border-radius: 4px;
+  border: 2px solid $dark-green;
+  color: $white;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1;
+  padding: 5px 10px;
+  &:hover, &:focus {
+    color: $white;
+    background-color: darken($dark-green, 5%);
+    border-color: darken($dark-green, 5%);
+  }
+}
+.button--full-width {
+  @extend .button--small;
+  font-size: 24px;
+  width: 100%;
+}
+.button--populaire {
+  font-family: $populaire;
+  font-size: 36px;
+}
+
+// ===============
+// GENERAL STYLES
+// ===============
+html, body {
+  height: 100%;
+}
+body {
+  @extend %background--craft;
+  color: $black;
+  overflow-x: hidden;
+  &.print-wrapper {
+    background: $white;
+  }
+  color: $black;
+}
+.reviews {
+  i {
+    color: $dark-green;
+  }
+  .empty {
+    color: #B0BB91;
+  }
+}
+hr, .hr--green {
+  border: none;
+}
+hr {
+  height: 8px;
+  background-image: url($assets-line-svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 100%;
+}
+.hr--green {
+  height: 2px;
+  background-image: url($assets-line-green-redux-svg);
+  background-repeat: repeat-x;
+  background-position-x: 0px;
+  max-width: unset;
+  position: relative;
+  &:after {
+    background-color: $dark-green;
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    left: 0;
+    top: 0;
+  }
+}
+_:-ms-fullscreen, :root {
+  .hr--green {
+    background-image: none;
+    background-color: $dark-green;
+  }
+}
+.hr--line {
+  background-image: none;
+  background-color: rgba($off-black,.4);
+  height: 1px;
+}
+.hr--line--green {
+  background-color: $dark-green;
+  height: 4px;
+}
+.copy-container {
+  a {
+    @extend .link--green;
+    &:hover {
+      text-decoration: underline;
+    }
+    @media only screen and (max-width: $xsmall-screen) {
+      &:hover, &:active {
+        text-decoration: none;
+      }
+    }
+  }
+}
+.list--unstyled {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  li {
+    line-height: none;
+  }
+}
+
+.callout--alert {
+  background-color: $red;
+  border: 0;
+  color: $white;
+  font-weight: bold;
+  a {
+    color: $white;
+    text-decoration: underline;
+    @media only screen and (max-width: $xsmall-screen) {
+      &:hover, &:active {
+        text-decoration: none;
+      }
+    }
+  }
+  @media only screen and (max-width: $small-screen) {
+    p {
+      font-size: 14px;
+    }
+  }
+}
+.alert {
+  color: $white;
+  // border-radius: 3px;
+  font-weight: 600;
+}
+.alert-error {
+  background: $red;
+  background-color: rgba($red, 0.9);
+}
+.alert-info {
+  background-color: $green;
+  background-color: rgba($green, 0.8);
+}
+
+.js-expandable__container {
+  display: none;
+}
+// ===============
+// TRANSITIONS
+// ===============
+.-will-rotate, %-will-rotate {
+  will-change: transform;
+  @include transition(all, 100ms, linear);
+  &:hover {
+    -moz-transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+}
+.-will-rotate--small, %-will-rotate--small {
+  @extend %-will-rotate;
+  &:hover {
+    -moz-transform: rotate(-1deg) scale(1.05);
+    -webkit-transform: rotate(-1deg) scale(1.05);
+    -o-transform: rotate(-1deg) scale(1.05);
+    transform: rotate(-1deg) scale(1.05);
+  }
+}
+// ===============
+// MAGNIFIC PLUGIN STYLES
+// ===============
+.mfp-figure:after {
+  background: transparent;
+  box-shadow: none;
+}
+// ===============
+// FORMS
+// ===============
+input[type='text'] {
+  border: 1px solid $white;
+  box-shadow: none;
+  &:focus {
+    box-shadow: none;
+  }
+  &.bordered {
+    border: 1px solid rgba($off-black,.4);
+  }
+}
+select {
+  &.bordered {
+    border: 1px solid rgba($off-black,.4);
+  }
+}
+.search {
+  input {
+    margin: 0;
+    padding-left: 30px;
+    font-style: italic;
+  }
+}
+.search--button {
+  position:absolute;
+  top: 50%;
+  left: 10px;
+  margin-top:-8px;
+}
+.mobile--nav {
+  .search--button {
+    right: 10px;
+    left: auto;
+  }
+  .search input {
+    border: 1px solid #ccc;
+    padding: 10px 30px 10px 10px;
+  }
+}
+// ===============
+// CONTENT PAGE
+// ===============
+// Use the class to wrap content built within the
+// Pages section of the CMS to give the document basic structure
+#body_content {
+  #body_content_title {
+    @extend .headline;
+    @extend .h1;
+  }
+  p {
+    margin: 10px 0;
+  }
+  h2 {
+    @extend %lato;
+    @extend .h6;
+    color: $off-black;
+    margin: 20px 0 10px;
+  }
+}
+
+// ===============
+// SEARCH
+// ===============
+.global-search {
+  background-color: transparent;
+  background-image: url($assets-white-texture-transparent-png);
+  background-repeat: repeat;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  opacity: .99;
+  overflow-y: scroll;
+  z-index: 9999;
+  -webkit-overflow-scrolling: touch;
+}
+// IE fix for x clear on input
+#global_search::-ms-clear {
+   display: none;
+}
+.global-search__wrap {
+  position: relative;
+  input[type='text'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    background-color: transparent;
+    color: $black;
+    height: auto;
+    padding: 15px 20px 15px 50px;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 30px;
+    font-weight: 500;
+    &:focus {
+      border: none;
+    }
+  }
+  &:before {
+    background-color: $warm-black;
+    content: "";
+    width: 2px;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 35px;
+  }
+  ::-webkit-input-placeholder {
+    color: rgba($black, 0.6);
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 300;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: rgba($black, 0.6);
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 300;
+  }
+  ::-moz-placeholder {  /* Firefox 19+ */
+    color: rgba($black, 0.6);
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 300;
+  }
+  :-ms-input-placeholder {
+    color: rgba($black, 0.6);
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 300;
+  }
+  .search--button {
+    top: 50%;
+    margin: -14px;
+  }
+  .icon-search {
+    font-size: 30px;
+    color: $dark-green;
+  }
+}
+.global-search__image {
+  @media only screen and (max-width: $small-screen) {
+    max-width: 100px;
+  }
+}
+// ===============
+// NAVIGATION
+// ===============
+.navigation--menu {
+  margin: 0;
+  padding: 0;
+  display: block;
+  text-align: center;
+  list-style: none;
+  width: 100%;
+  li {
+    text-align: center;
+    display: inline-block;
+    &.li--default {
+      padding: 0 3.3%;
+      @media only screen and (max-width: $medium-screen) {
+        padding: 0 2%;
+      }
+    }
+  }
+  .navigation__link {
+    color: $black;
+    display: block;
+    padding:15px 0 25px;
+  }
+  span {
+    @extend %gotham-bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    position: relative;
+  }
+  .active {
+    position: relative;
+    span:after {
+      content: "";
+      position: absolute;
+      width: 110%;
+      height: 4px;
+      background-image: url($assets-line-svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      bottom: -9px;
+      left: -2px;
+      background-position: 100% 0px;
+    }
+  }
+  @media only screen and (max-width: $small-screen) {
+    text-align: right;
+    li {
+      display: inline-block;
+      font-size: 28px;
+    }
+    a {
+      color: $dark-green;
+    }
+  }
+}
+.navigation--button {
+  @media only screen and (max-width: $small-screen) {
+    padding: 15px;
+  }
+}
+.logo--wrapper {
+  min-height: 130px;
+  @media only screen and (max-width: $small-screen) {
+    min-height: auto;
+  }
+}
+.logo {
+  max-width: 200px;
+  width: 100%;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  @media only screen and (max-width: $small-screen) {
+    margin-top: 0;
+    margin-bottom: 25px;
+    max-width: 150px;
+  }
+}
+.hide-claims {
+  .claims, .green-stripe--stripe {
+    display: none;
+  }
+}
+.hide-rip {
+  &.page-rip:before {
+    display: none;
+  }
+}
+.claims {
+  color: $cream;
+  padding: 10px 0;
+  @extend %gotham-bold;
+  @include transition(all, 100ms, linear);
+  &:hover {
+    color: $white;
+  }
+  p {
+    font-size: 17px;
+    line-height: 1.3;
+  }
+  span {
+    font-size: 16px;
+    padding: 0 8px;
+  }
+  @media only screen and (max-width: $small-screen) {
+    // rid of spaces in HTML
+    font-size: 0;
+    padding: 5px 0px;
+    p {
+      font-size: 12px;
+      letter-spacing: normal;
+    }
+    span {
+      padding: 0 3px;
+      font-size: 12px;
+    }
+  }
+  @media only screen and (max-width: $xsmall-screen) {
+    p {
+      font-size: 11px;
+      letter-spacing: -0.5px;
+    }
+    span {
+      padding: 0 2px;
+      font-size: 8px;
+      visibility: none;
+    }
+  }
+}
+.claims--arrow {
+  font-size: 20px;
+  margin-left: 8px;
+  opacity: .8;
+  @media only screen and (max-width: $medium-screen) {
+    font-size: 18px;
+  }
+  @media only screen and (max-width: $small-screen) {
+    font-size: 15px;
+    margin-left: 5px;
+  }
+  @media only screen and (max-width: $xsmall-screen) {
+    font-size: 13px;
+  }
+}
+.modaltip {
+  @extend %background--texture__white;
+  @extend %border-radius--uneven;
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.3);
+  display: none;
+  margin-left: -45%;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+  width: 90%;
+  z-index: 100;
+  @media only screen and (min-width: $small-screen) {
+    top: auto;
+    &:after {
+      border-style: solid;
+      border-width: 0 10px 12px 10px;
+      border-color:  transparent transparent $white transparent;
+      content: '';
+      margin-top: 2px;
+      margin-left: -10px;
+      position: absolute;
+        left: 50%;
+        top: -10px;
+      width: 0;
+      height: 0;
+      z-index: 99;
+    }
+  }
+  @media only screen and (min-width: $medium-screen) {
+    margin-left: -35%;
+    width: 70%;
+  }
+  @media only screen and (max-width: $medium-screen) and (min-width: $small-screen) {
+    margin-left: -45%;
+    width: 90%;
+  }
+  .modaltip__column {
+    background: url(image_path('line-green-vertical.svg')) no-repeat top left;
+    padding: 0 20px;
+    &:first-child {
+      background: none;
+    }
+  }
+}
+.modaltip__close {
+  color: $dark-green;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+// Navigation Dropdown
+.navigation--menu__dropdown {
+  &.toggled {
+    @extend %background--texture__white;
+    background-position: bottom left;
+  }
+}
+.navigation--social {
+  @extend %background--texture__white;
+  display: none;
+  margin-top: -3px;
+  padding: 5px 0;
+  position: absolute;
+  left: 0;
+  white-space: nowrap;
+  z-index: 101;
+  li {
+    display: block;
+    float: left;
+    width: 50%;
+    text-align: center;
+    a {
+      color: $warm-black;
+      display: block;
+      padding: 10px;
+      &:hover {
+        color: $dark-green;
+      }
+    }
+  }
+}
+.navigation--products {
+  @extend %background--texture__white;
+  background-position: 100%;
+  display: none;
+  position: absolute;
+  left: 0;
+  margin-top: -3px;
+  text-align: left;
+  width: 100%;
+  z-index: 101;
+  &.-open {
+    display: block;
+  }
+  .vertical-align-padding {
+    padding: 25px;
+  }
+  .product--category__icon {
+    font-size: 50px;
+  }
+}
+// ===============
+// Off canvas nav
+// ===============
+.wrap--outer {
+  height: 100%;
+  position: relative;
+  &.-extended {
+    height: 100%;
+    overflow:hidden;
+  }
+  .-search-active & {
+    overflow: hidden;
+  }
+}
+.wrap--inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  right: 0;
+  @include transition(all, 0.6s, ease-in-out);
+  .-extended & {
+    right: 100%;
+  }
+}
+.mobile--side-canvas {
+  @include transition(all, 0.6s, ease-in-out);
+  @extend %background--texture__white;
+  display: none;
+  position: absolute;
+    right: -100%;
+    top: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  .-extended & {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+.mobile--nav__claims {
+  .button--outline--green {
+    &:focus, &:active {
+      background-color: transparent;
+      color: $dark-green;
+    }
+  }
+}
+@media only screen and (max-width: $small-screen) {
+  .mobile--nav {
+    .mobile--nav__claims {
+      display: none;
+    }
+    .-nav & {
+      display: block;
+    }
+    .-search & {
+      display: block;
+      .mobile--nav__list {
+        display: none;
+      }
+    }
+    .-claims & {
+      display: block;
+      .mobile--nav__search,
+      .mobile--nav__divider,
+      .mobile--nav__list {
+        display: none;
+      }
+      .mobile--nav__claims {
+        display: block;
+      }
+    }
+  }
+  .mobile--filter {
+    .-filter & {
+      display: block;
+    }
+  }
+}
+// =============
+// TEXTURES
+// =============
+.page-rip {
+  background-color: #F3EDDB;
+  background-image: url($assets-cream-jpg);
+  background-size: 450px;
+  background-repeat: repeat;
+  position: relative;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: -15px;
+    height: 30px;
+    background-image: url($assets-cream-top-png);
+    background-size: 600px;
+    background-repeat: repeat-x;
+    // Using z-index here - only thing that wont effect the mix-blend-mode bug for chrome
+    // https://bugs.chromium.org/p/chromium/issues/detail?id=503638
+    z-index: -1;
+  }
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: -52px;
+    height: 58px;
+    z-index: -1;
+    background-image: url($assets-cream-bottom-png);
+    background-size: 600px;
+    background-repeat: repeat-x;
+  }
+  &.page-rip--alt {
+    background-color: $white;
+    background-image: none;
+    &:after {
+      bottom: -40px;
+    }
+    &:before,
+    &:after {
+      background-color: $white;
+      background-image: none;
+    }
+  }
+}
+%clean-hero, .clean-hero {
+  position: relative;
+  // workaround in page rip
+  margin-top:-40px;
+  @extend %background--craft;
+  @media only screen and (max-width: $small-screen) {
+    margin-top: 0;
+  }
+}
+%craft--hero, .craft--hero {
+  position: relative;
+  // workaround in page rip
+  margin-top:-40px;
+  padding-bottom: 15px;
+  @extend %background--craft;
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    height: 30px;
+    background-image: url($assets-cream-top-png);
+    background-size: 600px;
+    background-repeat: repeat-x;
+    // fixing stray line from background repeat
+    background-position: 0px -2px;
+    // Using z-index here - only thing that wont effect the mix-blend-mode bug for chrome
+    // https://bugs.chromium.org/p/chromium/issues/detail?id=503638
+    z-index: 1;
+  }
+  @media only screen and (max-width: $small-screen) {
+    margin-top: 0;
+  }
+}
+.green-stripe--stripe {
+  background-color: #62802c;
+  color: $white;
+  font-family: $kapra;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 9px;
+    z-index: 4;
+  }
+  &:before {
+    background-image: url($assets-greener-stripe-top-png);
+    top:-3px;
+    background-size: 210px;
+  }
+  &:after {
+    background-image: url($assets-greener-stripe-bottom-png);
+    bottom:-7px;
+    background-size: 558px;
+  }
+}
+.green-stripe--text {
+  color: $white;
+  position: relative;
+  z-index: 2;
+}
+
+// ================
+// HOMEPAGE
+// ================
+.home-hero {
+  @extend %craft--hero;
+  @media only screen and (max-width: $small-screen) {
+    background: none;
+    margin-bottom: 20px;
+    .hero--gradient {
+      display: none;
+    }
+    .padding-ratio__container {
+      background-color: transparent;
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    &:before {
+      // getting rid of rip
+      display: none;
+    }
+  }
+  .hero--gradient {
+    height: 100%;
+  }
+  .carousel--text__headline {
+    @media only screen and (max-width: $small-screen) {
+      font-family: $lato;
+      text-transform: initial;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+  }
+  .carousel--text {
+    width: 100%;
+    p {
+      color: $white;
+    }
+    @media only screen and (max-width: $small-screen) {
+      position: relative;
+      left: auto;
+      right: auto;
+      top: auto;
+      bottom: auto;
+      text-shadow: none;
+      margin: 20px auto;
+      transform: translate(0, 0);
+      width: 90%;
+      p {
+        color: $black;
+      }
+    }
+  }
+  .carousel {
+    .slick-prev,
+    .slick-next {
+      @media only screen and (max-width: $small-screen) {
+        background: rgba($black,0.5);
+        top: 30%;
+        transform: translate(0, -30%);
+      }
+      @media only screen and (max-width: $xsmall-screen) {
+        top: 23%;
+        transform: translate(0, -23%);
+      }
+    }
+  }
+  @media only screen and (max-width: $small-screen) {
+    .slick-dots {
+      display: block !important;
+      bottom: -15px;
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%);
+    }
+    .slick-dots li button {
+      &:before {
+        color: $dark-green;
+      }
+    }
+    .slick-dots li.slick-active button {
+      &:before {
+        color: $dark-green;
+        opacity: .8;
+      }
+    }
+  }
+  .home-hero__cta {
+    margin: 20px 0px 30px;
+    position: relative;
+    p {
+      display: inline-block;
+      font-size: 20px;
+    }
+    .button {
+      // to match line height with other buttons with fa icons
+      line-height: 1.3;
+    }
+    @media only screen and (max-width: $small-screen) {
+      margin: 40px 0 20px;
+      padding: 20px 0;
+      p {
+        display: block;
+        margin: 5px 0;
+        position: relative;
+        z-index: 10;
+      }
+      .button {
+        background: lighten($warm-black, 10%);
+        border-image: none;
+        border: 4px solid lighten($warm-black, 10%);
+        color: $white;
+        line-height: initial;
+        padding: 5px 20px;
+      }
+    }
+  }
+}
+.home-hero--light-tear {
+  &:before {
+    background-image: url("../../assets/textures/cream-half-size/light-cream-top.png");
+  }
+}
+.home-images {
+  max-height: 125px;
+  @media only screen and (min-width: $small-screen) {
+    max-height: 150px;
+  }
+}
+.home-video {
+  max-width: 330px;
+}
+.applegatarian-section {
+  background: #fdfafa;
+  padding: 40px 0;
+  @media only screen and (min-width: $small-screen) {
+    padding: 40px 0 60px;
+  }
+  p {
+    font-size: 16px;
+    &:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+    @media only screen and (min-width: $small-screen) {
+      font-size: 18px;
+    }
+  }
+}
+.applegatarian-section__headline {
+  color: $red;
+  font-size: 48px;
+  line-height: 1;
+  @media only screen and (min-width: $small-screen) {
+    font-size: 72px;
+  }
+}
+// ================
+// PRODUCT LIST
+// ================
+.product--hero__text {
+  position: absolute;
+  width: 100%;
+  bottom: 20%;
+  color: $white;
+  z-index: 1;
+  @media only screen and (max-width: $small-screen) {
+    .product--hero__headline {
+      font-size: 22px;
+    }
+    .h6 {
+      font-size: 14px;
+    }
+  }
+}
+.product--hero__text--no-subhead {
+  bottom: 30%;
+}
+.hero--gradient {
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.40) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,0.40)));
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.40) 100%);
+  background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.40) 100%);
+  background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.40) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.40) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+  @media only screen and (max-width: $small-screen) {
+    height: 100%;
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.50) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,0.70)));
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.50) 100%);
+    background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.50) 100%);
+    background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.50) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.50) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+  }
+}
+.product--category__image-container {
+  display: block;
+  position: relative;
+  max-height: 200px;
+}
+.product--category__name {
+  margin-top: 15px;
+  .navigation--product-categories & {
+    @extend .margin-top-xs;
+  }
+}
+.vertical-align-padding {
+  padding: 30px;
+}
+.product--category__wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 0;
+  text-align: center;
+  &:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+  img {
+    vertical-align: bottom;
+    max-width: 135px;
+    max-height: 49px;
+  }
+}
+.product--category__icon {
+  font-size: 70px;
+  color: $warm-black;
+  vertical-align: bottom;
+  display: inline-block;
+  max-width: 100%;
+}
+.product--coupon {
+  background-color: $white;
+  border: 2px solid $white;
+  display: block;
+  font-size: 14px;
+  padding: 5px 10px;
+  position: absolute;
+  min-width: 83px;
+  bottom: 4%;
+  left: -7px;
+  z-index: 2;
+  @media only screen and (max-width: $small-screen) {
+    min-width: 64px;
+    font-size: 12px;
+    padding: 3px 5px;
+  }
+  &:after {
+    border: 2px dashed green;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .product--photo__container & {
+    bottom: auto;
+    top: 5%;
+  }
+}
+.product--award {
+  position: absolute;
+  bottom: -5px;
+  // hack to not have award image be full height
+  display: table;
+  right: 0;
+  z-index: 1;
+  img {
+    max-width: 65px;
+    max-height: 65px;
+  }
+}
+.product--award__top-align {
+  top: -10px;
+}
+.product--award__left-align {
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  @media only screen and (max-width: $small-screen) {
+    display: none;
+  }
+}
+.product--hero__headline {
+  color: $white;
+  @extend .h2;
+  @media only screen and (max-width: $small-screen) {
+    font-size: 22px;
+  }
+}
+.product--hero__subheadline {
+  font-size: 18px;
+  line-height: 1.3;
+  @media only screen and (max-width: $small-screen) {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+}
+.filter {
+  @extend %background--texture__white;
+  @extend .padding-sm;
+  display: none;
+  margin-top: 20px;
+  // matches .row
+  max-width: 75rem;
+  margin-right: 15px;
+  position: absolute;
+  z-index: 2;
+  &:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 30px;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid $white;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    .filter--right & {
+      right: 30px;
+      left: auto;
+    }
+    .product-reviews-page & {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .filter--right & {
+    right: 11px;
+  }
+}
+.filter--headline {
+  @extend .muted;
+  .mobile--filter & {
+    color: $black;
+  }
+}
+.filter-active {
+  .fa-caret-down {
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+  }
+}
+input:disabled {
+  transform: translateZ(0);
+}
+// .disabled-label {
+//   color: $medium-gray;
+// }
+.mobile--filter {
+  [type='checkbox'] + label {
+    font-size: 16px;
+  }
+}
+// Overwriting will_paginate CSS
+.pagination {
+  text-align: center;
+  em {
+    @extend %border-radius--uneven;
+  }
+  a {
+    @include transition(background-color, 100ms, linear);
+    display: inline-block;
+    &:hover {
+      background-color: rgba($bright-green, 0.2);
+    }
+  }
+  a, em.current {
+    padding: 5px 10px;
+  }
+  .current {
+    background-color: rgba($bright-green, 0.6);
+  }
+}
+// ================
+// PRODUCT SHOW
+// ================
+.social-sidebar {
+  position: absolute;
+  left: 10px;
+  top: 150px;
+  z-index: 1;
+}
+.social-sidebar__item {
+  border: 3px solid $dark-green;
+  border-radius: 50%;
+  color: $dark-green;
+  font-size: 23px;
+  margin-bottom: 5px;
+  padding: 2px 8px;
+  text-align: center;
+  width:45px;
+  height: 45px;
+  @include transition(all, 100ms, linear);
+  span {
+    display: inline;
+    font-size: 16px;
+  }
+  &:link,
+  &:visited {
+    background-color: $cream;
+    color: $dark-green;
+  }
+  &:active,
+  &:hover {
+    background-color: $dark-green;
+    color: $cream;
+  }
+}
+.social-sidebar__item--transparent {
+  background-color: transparent;
+}
+.social-inline__item {
+  @extend %button;
+  color: $white;
+  font-size: 20px;
+  display: inline-block;
+  margin: 0;
+  opacity: 0.7;
+  width: 40px;
+  text-align: center;
+  height: 40px;
+  .fa {
+    vertical-align: bottom;
+  }
+}
+.breadcrumb {
+  margin-bottom: 10px;
+  a {
+    @extend .link--green;
+  }
+  @media only screen and (max-width: $small-screen) {
+    margin-top: 20px;
+    a {
+      &:hover, &:active {
+        color: #FFF;
+        text-decoration: none;
+      }
+    }
+  }
+  @media only screen and (max-width: $xsmall-screen) {
+    font-size: 12px;
+    i {
+      display: none;
+    }
+    a {
+      background-color: $green;
+      color: $white;
+      padding: 5px;
+      position: relative;
+      z-index: 1;
+      margin-right:6px;
+      margin-left: 9px;
+      &:before {
+        content: "";
+        position: absolute;
+        background-image:url('../../assets/breadcrumb-left.png');
+        background-size: 12px 25px;
+        width: 12px;
+        height: 25px;
+        left: -10px;
+        top: 0;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        background-image:url('../../assets/breadcrumb-right.png');
+        background-size: 8px 25px;
+        width: 8px;
+        height: 25px;
+        top: 0;
+        right: -8px;
+      }
+    }
+  }
+}
+.breadcrumb--margin-top-0 {
+  @media only screen and (max-width: $small-screen) {
+    margin-top: 0;
+  }
+}
+.product--icons {
+  background-repeat: no-repeat;
+}
+.product--photo__container {
+  text-align: center;
+  display: block;
+  // Mitigating loading behavior for social icons
+  min-height: 100px;
+  min-width: 127px;
+  max-width: 100%;
+  @media only screen and (max-width: $small-screen) {
+    display: inline-block;
+  }
+}
+.product--photo {
+  width: 100%;
+  @media only screen and (max-width: $small-screen) {
+    max-height: 400px;
+    width: auto;
+  }
+}
+.product--list {
+  list-style-type: none;
+  font-size: 0;
+  margin: 20px 0px 40px;
+  a {
+    color: $black;
+    background-color: rgba($bright-green, 0.4);
+    margin-bottom: 10px;
+    &.active {
+      color: $white;
+      background-color: $bright-green;
+    }
+    &:hover, &:focus {
+      background-color: $bright-green;
+      color: $white;
+      text-decoration: none;
+    }
+    @media only screen and (max-width: $medium-screen) {
+      // Mitigating font wrapping
+      font-size: 15px;
+    }
+  }
+}
+.product--list--with-icon {
+  @media only screen and (max-width: $small-screen) {
+    .product--list__item {
+      width: 25%;
+    }
+  }
+}
+.product--list__item {
+  display: inline-block;
+  width: 20%;
+  padding-right: 10px;
+  &:last-of-type {
+    padding-right: 0;
+  }
+  @media only screen and (max-width: $small-screen) {
+    padding-right: 5px;
+    width: auto;
+  }
+}
+.product--list__button {
+  position: relative;
+  width: 100%;
+}
+.channelsight-logo {
+  width: 137px;
+  max-width: 100%;
+}
+.channelsight-logo--jet {
+  max-width: 75px;
+}
+.channelsight-container {
+  max-height: 80px;
+  position: relative;
+}
+.logo-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font: 0/0 a;
+  &:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+}
+// fade effect for product navigation
+.js-product-container {
+  @include transition(opacity, 0.2s, linear);
+  opacity: 1;
+  &.overflow--hide {
+    opacity: 0;
+  }
+}
+
+.product--thumbnail__container {
+  .short-products__container &, .medium-products__container {
+    min-height: auto;
+  }
+}
+
+
+
+.product--thumbnail__container{
+  min-height: 230px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+
+  @media only screen and (max-width: $small-screen) {
+    min-height: 170px;
+  }
+
+  .product--thumbnail__wrapper{
+    position: relative;
+    height: 230px;
+    width:100%;
+    max-height: 230px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -ms-flex-align: end;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+
+    a{
+      position: relative;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      margin: 0 auto;
+
+      @media only screen and (max-width: $small-screen) and (min-width: $xsmall-screen){
+        height: 170px;
+      }
+
+      img{
+        max-height: 230px;
+        max-width: 100%;
+        align-self: flex-end;
+
+        // IE 10 + 11 Only
+        @include target-legacy-ie {
+          max-width: 270px;
+          width: 100%;
+        }
+
+        @media only screen and (max-width: $small-screen) {
+          max-height: 100%;
+        }
+        @media only screen and (max-width: $xsmall-screen) {
+          max-height: 170px;
+          height: auto;
+        }
+      }
+    }
+
+
+
+
+    // Badges
+    &.product--thumbnail__wrapper--featured a:before {
+      background: asset_url("icon_featured") no-repeat 0 0;
+      background-size: contain;
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: -25px;
+      width: 110px;
+      height: 60px;
+
+    }
+    &.product--thumbnail__wrapper--new a:before {
+        background: asset_url("icon_new") no-repeat 0 0;
+        background-size: contain;
+        content: "";
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        width: 50px;
+        height: 50px;
+
+      }
+    // Medium / Short Products
+    .medium-products__container & {
+      height: 200px;
+      img {
+        max-height: 200px;
+      }
+    }
+    .short-products__container & {
+      height: 160px;
+      img {
+        max-height: 160px;
+      }
+    }
+    @media only screen and (max-width: $small-screen) {
+      height: 170px;
+      .short-products__container & {
+        height: 115px;
+        img {
+          max-height: 115px;
+        }
+      }
+      .medium-products__container & {
+        height: 173px;
+        img {
+          max-height: 173px;
+        }
+      }
+    }
+  }
+
+
+}
+
+
+
+// need to define these widths for IE
+.product--thumbnail__wrapper--small {
+  height: 170px;
+  img {
+    max-width: 187px;
+    @media only screen and (max-width: $medium-screen) {
+      max-width: 140px;
+    }
+    @media only screen and (max-width: $small-screen) {
+      max-width: 100%;
+    }
+  }
+}
+.product--info__container {
+  @media only screen and (max-width: $small-screen) {
+    background-color: rgba($white, 0.3);
+    border-top: 1px solid rgba($green, 0.4);
+    border-bottom: 1px solid rgba($green, 0.4);
+    margin-top: 20px;
+  }
+}
+.product-standards--heading {
+  @media only screen and (max-width: $small-screen) {
+    font-size: 18px;
+  }
+}
+.product-standards__copy {
+  a {
+    @extend .link--green;
+  }
+  ul {
+    @extend .list--icons;
+    @extend .list--icons--no-i;
+  }
+}
+.product--related {
+  height: 156px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: bottom;
+  @media only screen and (max-width: $xsmall-screen) {
+    height: 124px;
+  }
+}
+.product--related-image {
+  margin: 0 auto;
+  max-height: 100%;
+}
+.product--video {
+  min-height: 400px;
+}
+.product--recipe {
+  .background--white {
+    @include transition(box-shadow, 100ms, linear);
+    &:hover {
+      box-shadow: 0 4px 8px -2px rgba(0,0,0,.25);
+    }
+  }
+  @media only screen and (max-width: $medium-screen) {
+    height: 225px;
+  }
+  @media only screen and (max-width: $small-screen) {
+    height: 177px;
+  }
+}
+
+// Product Vendors
+.product--vendors {
+  text-align: center;
+  @media only screen and (min-width: $small-screen) {
+    text-align: left;
+  }
+  .button {
+    margin-bottom: 0;
+  }
+  img {
+    margin-right: 20px;
+    max-width: 135px;
+    width: 50%;
+  }
+}
+
+// PowerReview overrides
+
+.product-reviews {
+  .p-w-r {
+    font-family: $lato;
+    .pr-review-snapshot {
+      background-color: rgba(#fff, .5);
+      border-radius: 5px;
+    }
+    .pr-accessible-btn,
+    .pr-review-snapshot .pr-review-snapshot-simple .pr-review-snapshot-snippets .pr-snippet-read-and-write a {
+      @extend %button;
+      color: $white;
+      display: inline-block;
+      // padding: $button-padding;
+      &:visited,
+      &:hover,
+      &:active {
+        color: $white
+      }
+    }
+
+    .pr-snippet-stars,
+    .pr-review-display .pr-rd-footer {
+      background-color: transparent;
+    }
+    .pr-helpful-btn {
+      background-color: $white;
+    }
+    .pr-review-display {
+      .pr-rd-main-header-with-filters .pr-rd-review-header-contents {
+        background-color: rgba(#fff, .5);
+        border-radius: 5px;
+      }
+      .pr-rd-main-header-with-filters .pr-rd-sort {
+        padding: 3px 26px 4px 10px;
+      }
+      a {
+        @extend .link--green;
+      }
+      .pr-rd-merchant-response {
+        background-color: rgba(#fff, .5);
+        border-radius: 5px;
+      }
+      .pr-rd-reviewer-type {
+        &.pr-verified_buyer {
+          display: none;
+        }
+      }
+    }
+    .pr-review-snapshot {
+      .pr-ratings-histogram {
+        .pr-histogram-stars {
+          .pr-ratings-histogram-barValue {
+            background-color: $dark-green;
+            &:hover {
+              background-color: $dark-green;
+            }
+          }
+          &:hover,
+          &:focus {
+            box-shadow: 0 0 5px $dark-green;
+            .pr-ratings-histogram-barValue {
+              background-color: $dark-green;
+            }
+            .pr-histogram-count,
+            .pr-histogram-label {
+              color: $dark-green;
+            }
+            .pr-ratings-histogram-bar {
+              background-color: #ddd;
+            }
+          }
+        }
+        .pr-hist-filter-1,
+        .pr-hist-filter-2,
+        .pr-hist-filter-3,
+        .pr-hist-filter-4,
+        .pr-hist-filter-5 {
+          .pr-ratings-histogram-barValue {
+            background-color: $dark-green;
+            &:hover {
+              background-color: $dark-green;
+            }
+          }
+          .pr-histogram-count,
+          .pr-histogram-label {
+            color: $dark-green;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Power Review Overrides for Single Product Review Page
+
+.pr-single-product-review {
+  .p-w-r {
+    font-family: $lato;
+    .pr-header-title {
+      color: $off-black;
+      font-family: $kapra-bold;
+      font-size: 36px;
+      margin-bottom: 0;
+    }
+    .pr-header-product-name {
+      font-size: 18px;
+      line-height: 1.2;
+      margin-top: 0;
+    }
+  }
+  .thank-you-page h5 a,
+  .p-w-r .pr-accessible-btn {
+    @extend %button;
+    color: $white;
+    display: inline-block;
+    // padding: $button-padding;
+    &:visited,
+      &:hover,
+      &:active {
+        color: $white
+      }
+  }
+}
+
+// Buynow Ecommerce PAGE
+.products_with_vendors {
+  .js-vendor__link {
+    @extend .link--green;
+  }
+  .js-vendor__container {
+    display: none;
+  }
+  .js-channelsight.button {
+    display: none;
+  }
+  .button--vendors {
+    background-image: none;
+    background-color: $white;
+    margin: 0;
+    padding: 8px 35px 8px 15px;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      border-left: 10px solid $dark-green;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      transform: translateY(-50%);
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      border-left: 5px solid #fff;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      transform: translateY(-50%);
+    }
+    &:hover {
+      box-shadow: 0 0 15px rgba($dark-green, .6);
+    }
+    img {
+      width: 80%;
+    }
+  }
+}
+
+// ===============
+// JOBS PAGES
+// ===============
+.jobs-video-border {
+  background-image: url('../../assets/jobs-video-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15% 5% 7% 5%;
+}
+.responsive-video-wrapper {
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// ===============
+// Recipe List
+// ===============
+.product--spotlight {
+  position: relative;
+  overflow: hidden;
+  &:before {
+    @extend %background--craft;
+    @extend .small;
+    box-shadow: 0 1px 3px rgba($black, 0.2);
+    -moz-transform: rotate(-50deg);
+    -webkit-transform: rotate(-50deg);
+    -o-transform: rotate(-50deg);
+    transform: rotate(-50deg);
+    content: "Product Spotlight";
+    color: rgba($black, 0.6);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 7px;
+    text-align: center;
+    position: absolute;
+    top: 36px;
+    left: -45px;
+    width: 180px;
+  }
+}
+// ===============
+// Recipe Show
+// ===============
+.recipe--description {
+  p {
+    @extend .h6;
+  }
+  h1,h2,h3 {
+    text-transform: uppercase;
+  }
+}
+.recipe-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.recipe-features__item {
+  display: inline-block;
+  padding-right: 15px;
+  text-align: center;
+  @media only screen and (min-width: $small-screen) {
+    display: block;
+    min-height: 50px;
+    padding-right: 0;
+    text-align: left;
+  }
+  &:last-child {
+    padding-right: 0;
+  }
+}
+.recipe-features__link {
+  display: block;
+  line-height: 1.3;
+  margin: 5px 0;
+  padding: 50px 0 0 0;
+  position: relative;
+  &:before {
+    @extend %icon;
+    @include transition(all, 100ms, linear);
+    color: $green;
+    font-size: 40px;
+    position: absolute;
+      top: 0;
+      left: 50%;
+    transform: translateX(-50%);
+    will-change: transform;
+  }
+  &:hover {
+    &:before {
+      transform: translateX(-50%) rotate(-5deg);
+    }
+  }
+  @media only screen and (min-width: $small-screen) {
+    padding: 15px 0 15px 80px;
+    &:before {
+      top: 50%;
+      left: 0;
+      font-size: 50px;
+      transform: translateY(-50%);
+    }
+    &:hover {
+      &:before {
+        transform: translateY(-50%) rotate(-5deg);
+      }
+    }
+  }
+}
+.recipe-features__link--gluten-free {
+  &:before {
+    content: "\e913";
+    @media only screen and (min-width: $small-screen) {
+      left: 1px;
+    }
+  }
+}
+.recipe-features__link--dairy-free {
+  &:before {
+    content: "\e901";
+    @media only screen and (min-width: $small-screen) {
+      left: 22px;
+    }
+  }
+}
+.recipe-features__link--whole30 {
+  &:before {
+    content: "\e923";
+  }
+  @media only screen and (min-width: $small-screen) {
+    &:before {
+      left: 10px;
+      transform: translateY(-60%);
+    }
+    &:hover {
+      &:before {
+        transform: translateY(-60%) rotate(-5deg);
+      }
+    }
+  }
+
+}
+
+// ===============
+// Community
+// ===============
+.community-body {
+  a {
+    @extend .link--green;
+  }
+  p {
+    margin-bottom: 15px;
+  }
+}
+.pinterest-align {
+  padding-top: 25px;
+  span {
+    vertical-align: bottom;
+  }
+}
+.post:last-of-type {
+  border: none;
+}
+// ===============
+// Footer
+// ===============
+.footer--button {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -68px;
+  margin-top: -45px;
+}
+.footer--links {
+  a {
+    @include transition(border-color, 200ms, linear);
+    border-bottom: 2px solid rgba($dark-green, 0);
+    color: $black;
+    text-decoration: none;
+    &:hover {
+      border-bottom: 2px solid $dark-green;
+    }
+    @media only screen and (max-width: $xsmall-screen) {
+      &:hover, &:active {
+        border-bottom-color: transparent;
+      }
+    }
+  }
+}
+// ===============
+// SLICK CAROUSEL
+// ===============
+// All Carousels
+.slick-next, .slick-prev {
+  z-index: 2;
+  &:before {
+    font-family: FontAwesome;
+  }
+}
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+// Desktop
+.carousel {
+  .slick-next, .slick-prev {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    &:before {
+      color: $white;
+      display: inline-block;
+      font-size: 45px;
+      line-height: 0.9;
+      opacity: 1;
+      top: 50%;
+      margin-top: -5px;
+      left: 50%;
+    }
+    @media only screen and (max-width: $medium-screen) {
+      width: 30px;
+      height: 30px;
+      &:before {
+        font-size: 25px;
+        margin-top: -2px;
+      }
+    }
+  }
+  .slick-prev {
+    left: 15px;
+    &:before {
+      content: "\f104";
+      margin-left: -5px;
+      @media only screen and (max-width: $medium-screen) {
+        margin-left: -2px;
+      }
+    }
+  }
+  .slick-next {
+    right: 15px;
+    &:before {
+      content: "\f105";
+      margin-right: -4px;
+      @media only screen and (max-width: $medium-screen) {
+        margin-right: -2px;
+      }
+    }
+  }
+}
+
+.carousel--product {
+  .slick-next, .slick-prev {
+    @extend %button;
+    background-color: $bright-green;
+    border-radius: 0;
+    right: -10px;
+    width: 20px;
+    height: 60px;
+    opacity: .75;
+    &:before {
+      font-size: 20px;
+      margin-top: -3px;
+      margin-left: -2px;
+      opacity: 1;
+    }
+    @media only screen and (min-width: $small-screen) {
+      right: -15px;
+      width: 15px;
+      height: 30px;
+    }
+  }
+  .slick-prev {
+    left: -10px;
+    @media only screen and (min-width: $small-screen) {
+      left: -15px;
+    }
+  }
+  .slick-dots {
+    position: relative;
+      bottom: auto;
+      right: auto;
+    li {
+      button {
+        &:before {
+          color: $bright-green;
+        }
+      }
+      &.slick-active {
+        button {
+          &:before {
+            color: $bright-green;
+          }
+        }
+      }
+    }
+  }
+  img {
+    margin: 0 auto;
+  }
+}
+.carousel__slide {
+  display: none;
+  position: relative;
+}
+.carousel--text__headline {
+  @extend %kapra;
+  text-transform: uppercase;
+  line-height: 1.1;
+  width: 70%;
+  margin: 0 auto 20px;
+  @media only screen and (max-width: $xsmall-screen) {
+    font-size: 22px;
+    margin-bottom: 0px;
+  }
+}
+.carousel--text__link {
+  color: $white;
+  border-bottom: 1px solid $white;
+  display:inline-block;
+  &:hover {
+    color: rgba($white, 0.8);
+  }
+}
+.carousel--text {
+  position: absolute;
+  bottom: 20%;
+  width: 100%;
+  p {
+    color: $white;
+  }
+  @media only screen and (max-width: $small-screen) {
+    text-shadow: 0px 0px 25px rgba(0, 0, 0, 1);
+  }
+}
+.carousel__cta {
+  @extend .carousel--text__link;
+  @media only screen and (max-width: $small-screen) {
+    background-color: $bright-green;
+    background-image: url("../../assets/textures/button-texture.png");
+    background-size: 280px;
+    background-position: center;
+    border: 4px solid $dark-green;
+    border-image: url("../../assets/textures/button-texture.png");
+    padding: 0px 10px;
+    &:hover, &:focus {
+      background-color: darken($bright-green, 7%);
+      border-color: darken($bright-green, 7%);
+      color: $white;
+    }
+    .home-hero & {
+      border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    }
+  }
+}
+.carousel-thumbnails {
+  margin-top: 10px;
+}
+.carousel-thumbnails__container {
+  cursor: pointer;
+  img {
+    border: 1px solid transparent;
+  }
+  &.active {
+    img {
+      border-color: $red;
+    }
+  }
+}
+// Mobile
+.js-mobile-carousel {
+  overflow: hidden;
+  .slick-next, .slick-prev {
+    background-color: #882526;
+    background-image: url("../../assets/textures/swipe-texture.png");
+    background-size: 87%;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-top: 14px;
+    &:before, &:after {
+      content: "";
+      opacity: 1;
+      font-size: 40px;
+      color: $white;
+      position: relative;
+    }
+  }
+  .slick-next {
+    right: -28px;
+    background-size: 100%;
+    background-position: 0px -23px;
+    &:before {
+      content: "\f0da";
+      right: 6px;
+    }
+  }
+  .slick-prev {
+    left: -28px;
+    background-position: 24px -16px;
+
+    &:before {
+      content: "\f0d9";
+      left: 6px;
+    }
+  }
+}
+.slick-dots {
+  display: inline-block;
+  width: auto;
+  bottom: 20px;
+  right: 15px;
+  text-align: right;
+  li {
+    margin: 0 2px;
+    button {
+      &:before {
+        color: $white;
+        font-size: 50px;
+      }
+    }
+    &.slick-active button:before {
+      color: $white;
+    }
+  }
+  .slick-active {
+    &:before {
+      color: $white;
+    }
+  }
+  @media only screen and (max-width: $xsmall-screen) {
+    // cant disable in js because of homepage
+    display: none !important;
+  }
+}
+.js-carousel {
+  max-height: 100%;
+  img {
+    // hide while it's loading
+    display: none;
+  }
+  &.slick-initialized img {
+    display: block;
+  }
+}
+
+// ===============
+// Coupons
+// ===============
+.coupon-display {
+  #coupondivmobile {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.coupon-page {
+  @media only screen and (max-width: $small-screen) {
+    padding-top: 40px;
+  }
+}
+
+// ===============
+// Site Down Page
+// ===============
+
+.site-down {
+  @extend .text-center;
+}
+
+.site-down__logo {
+  margin-bottom: 50px;
+  width: 70%;
+  @media only screen and (min-width: $xsmall-screen) {
+    margin-bottom: 100px;
+    width: 300px;
+  }
+}
+
+.site-down__headline {
+  @extend .uppercase;
+  @extend %kapra-bold;
+  font-size: 30px;
+  margin-bottom: 30px;
+  line-height: 1.2;
+  @media only screen and (min-width: $xsmall-screen) {
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+.site-down__subhead {
+  @extend %lato;
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 40px;
+  @media only screen and (min-width: $xsmall-screen) {
+    font-size: 30px;
+  }
+}
+
+.site-down__copy {
+  font-size: 16px;
+  margin-bottom: 20px;
+  @media only screen and (min-width: $xsmall-screen) {
+    font-size: 20px;
+  }
+}
+// ===============
+// Dashboard
+// ===============
+
+.dashboard__image {
+  background-size: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  color: transparent;
+  display: inline-block;
+  font: 0/0 serif;
+  text-shadow: none;
+  width: 100%;
+  vertical-align: middle;
+  @media only screen and (max-width: $small-screen) {
+    margin-bottom: 20px;
+  }
+}
+
+.dashboard__image--clean-food {
+  background-image: url("../../assets/dashboard/img_cleaner-craveable-food.png");
+  @media
+  only screen and (min-resolution: 200dpi) and (min-width: $xsmall-screen),
+  only screen and ( min-resolution: 1.25dppx) and (min-width: $xsmall-screen) {
+    background-image: url("../../assets/dashboard/img_cleaner-craveable-food@1.5x.png");
+  }
+}
+
+.dashboard__image--improving-life {
+  background-image: url("../../assets/dashboard/img_improving-life.png");
+  @media
+  only screen and (min-resolution: 200dpi) and (min-width: $xsmall-screen),
+  only screen and ( min-resolution: 1.25dppx) and (min-width: $xsmall-screen) {
+    background-image: url("../../assets/dashboard/img_improving-life@1.5x.png");
+  }
+}
+
+.dashboard__image--saving-antibiotics {
+  background-image: url("../../assets/dashboard/img_saving-antibiotics.png");
+  @media
+  only screen and (min-resolution: 200dpi) and (min-width: $xsmall-screen),
+  only screen and ( min-resolution: 1.25dppx) and (min-width: $xsmall-screen) {
+    background-image: url("../../assets/dashboard/img_saving-antibiotics@1.5x.png");
+  }
+}
+
+.dashboard__image--seeding-demand {
+  background-image: url("../../assets/dashboard/img_seeding-demand.png");
+  @media
+  only screen and (min-resolution: 200dpi) and (min-width: $xsmall-screen),
+  only screen and ( min-resolution: 1.25dppx) and (min-width: $xsmall-screen) {
+    background-image: url("../../assets/dashboard/img_seeding-demand@1.5x.png");
+  }
+}
+
+.dashboard__content {
+  display: block;
+  height: 0;
+  padding-top: 167.2413793103448%;
+  position: relative;
+  video,
+  .dashboard__video {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 37px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+  }
+}
+
+.dashboard__thumbnail {
+  cursor: pointer;
+}
+
+.dashboard__image--saving-antibiotics {
+  .dashboard__video {
+    background-image: url('../../assets/dashboard/img_saving-antibiotics_thumb.jpg');
+  }
+}
+
+.dashboard__image--improving-life {
+  .dashboard__video {
+    background-image: url('../../assets/dashboard/img_improving-life_thumb.jpg');
+  }
+}
+
+.dashboard__image--clean-food {
+  .dashboard__video {
+    background-image: url('../../assets/dashboard/img_cleaner-craveable-food_thumb.jpg');
+  }
+}
+
+.dashboard__image--seeding-demand {
+  .dashboard__video {
+    background-image: url('../../assets/dashboard/img_seeding-demand_thumb.jpg');
+  }
+}
+
+.dashboard__embed {
+  position: relative;
+  padding-bottom: 100%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  width: 100%;
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// ================
+// NEWSLETTER SIGNUP
+// ================
+
+.m_newsletter_signup {
+  .hint {
+    .success,
+    .error {
+      background-image: url("../../assets/textures/button-wide-crop.png");
+      border-radius: 3px;
+      margin: 5px 0;
+      padding: 5px 10px;
+    }
+    .success {
+      background-color: $dark-green;
+      color: $white;
+    }
+    .error {
+      background-color: $red;
+      color: $white;
+    }
+  }
+}
+
+.newsletter-footer {
+  margin: 50px 5px 0;
+  @media only screen and (min-width: $small-screen) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+// ================
+// SUGAR FREE
+// ================
+
+.sugar-free__img {
+  max-width: 140px;
+  max-height: 200px;
+  @media only screen and (max-width: $xsmall-screen) {
+    max-width: 100px;
+    max-height: 150px;
+  }
+}
+.sugar-free__img--pot {
+  max-width: 70px;
+}
+.sugar-free__img--spade {
+  max-width: 40px;
+}
+.product-landing-page__item--sugarfree {
+  img {
+    max-height: 150px;
+    width: auto;
+  }
+}
+
+// ===============
+// Modal Styles
+// ===============
+
+.modal {
+  @extend %background--texture__white;
+  .modal-header {
+    border: 0;
+    padding: 20px 20px 0;
+  }
+  .modal-footer {
+    background: none;
+    border: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    padding: 0 20px 20px;
+  }
+}
+
+// ================
+// Ribbon Banner (over hero)
+// ================
+.hero-ribbon__container {
+  @extend .columns;
+  position: absolute;
+  width: 100%;
+  bottom: 45px;
+  padding: 0 35px;
+  &:before, &:after {
+    border: 21px solid $yellow;
+    bottom: 0px;
+  }
+  &:before {
+    left: 18px;
+  }
+  &:after {
+    right: 18px;
+  }
+  @media only screen and (max-width: $small-screen) {
+    bottom: 20px;
+  }
+}
+.hero-ribbon {
+  background-color: #FFF;
+  border: 1px solid $yellow;
+  color: $bright-green;
+  padding: 8px;
+  margin: 0 8px;
+  text-align:center;
+  p {
+    // this font is only loaded for this page
+    font-family: 'Inknut Antiqua', serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1;
+  }
+  &:before, &:after {
+    border: 20px solid #FFF;
+    bottom: 1px;
+    z-index: 2;
+  }
+  &:before {
+    left: 21px;
+  }
+  &:after {
+    right: 21px;
+  }
+}
+.hero-ribbon, .hero-ribbon__container {
+  &:before, &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    display: block;
+  }
+  &:before {
+    border-right-width: 4px;
+    border-left-color: transparent;
+  }
+  &:after {
+    border-left-width: 4px;
+    border-right-color: transparent;
+  }
+}
+.hero-ribbon__logo {
+  width: 50px;
+  vertical-align: sub;
+  margin: 0 5px;
+}
+
+// Power Reviews Overwrites
+// ------------------------ //
+
+// Snippet
+.apgt-pr-reviewsnippet {
+  .p-w-r {
+    .pr-snippet-stars {
+      background-color: transparent;
+    }
+    .pr-snippet .pr-snippet-stars-png .pr-snippet-rating-decimal {
+      border: 0;
+      padding: 0 4px;
+    }
+    .pr-snippet-rating-decimal,
+    .pr-snippet-stars-reco-reco {
+      display: none;
+    }
+  }
+}
+
+// Display
+.apgt-pr-reviewdisplay {
+  .p-w-r {
+    .pr-review-snapshot {
+      .pr-review-snapshot-block-container .pr-review-snapshot-block-recommend {
+        display: none;
+      }
+      #pr-bottomline {
+        display: none;
+      }
+    }
+
+    .pr-review-display {
+      background-color: transparent;
+      .pr-snippet-write-review-link {
+        @extend %button;
+        @extend .button--long;
+        color: $white;
+        font-weight: bold;
+      }
+      .pr-content-collection-form .pr-media-modal .pr-cross-icon__line {
+        stroke: $bright-green;
+      }
+      .pr-rd-reviewer-type,
+      .pr-rd-bottomline {
+        display: none;
+      }
+    }
+  }
+}
+
+// ===============
+// PowerTip Styles
+// ===============
+#powerTip {
+  @extend %background--texture__white;
+  background-color: #FFF;
+  border-radius: 0;
+  color: $black;
+  width: 300px;
+  &.s:before {
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid $white;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+  }
+  @media only screen and (max-width: $medium-screen) {
+    width: 100%;
+    position: fixed;
+    top: 0 !important;
+    left: 0 !important;
+    height: 100%;
+  }
+  p {
+    white-space: normal;
+  }
+}
+// ===============
+// FOUNDATION OVERRIDES
+// ===============
+.reveal-overlay {
+  overflow-y: hidden;
+}
+body.is-reveal-open {
+  overflow: auto;
+}
+// ================
+// STYLE GUIDE
+// ================
+.-overflow-fix {
+  .wrap--outer {
+    overflow: initial;
+  }
+}
+.rectangle {
+  width: 100%;
+  height: 100px;
+}
+.color--green {
+  background-color: $green;
+}
+.color--dark-green {
+  background-color: $dark-green;
+}
+.color--bright-green {
+  background-color: $bright-green;
+}
+.color--red {
+  background-color: $red;
+}
+.color--dark-red {
+  background-color: $dark-red;
+}
+.style-guide-menu {
+  a.active {
+    background-color: $green;
+    color: #FFF;
+    font-weight: normal;
+  }
+}

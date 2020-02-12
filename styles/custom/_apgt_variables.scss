@@ -1,0 +1,365 @@
+// =======================
+// Colors
+// =======================
+
+$white: #fff;
+$black: #000;
+$off-black: #4A4A4A;
+$warm-black: #4a403e;
+$cream: #F2EAD2;
+$gray: #EEEEEE;
+$red: #e9412c;
+$dark-red: #882526;
+$green: #738b3e;
+$yellow: #dfbf73;
+$dark-green: #46772E;
+$bright-green: #5B8A2A;
+$text-color: #1F1724;
+
+// =======================
+// Fonts
+// =======================
+
+/**
+ * @license
+ * MyFonts Webfont Build ID 3289501, 2016-09-29T12:56:25-0400
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: Kapra-Bold by Typoforge Studio
+ * URL: http://www.myfonts.com/fonts/blazej-ostoja-lniski/kapra/bold/
+ *
+ * Webfont: Kapra-Regular by Typoforge Studio
+ * URL: http://www.myfonts.com/fonts/blazej-ostoja-lniski/kapra/regular/
+ *
+ *
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=3289501
+ * Licensed pageviews: 600,000
+ * Webfonts copyright: Copyright (c) 2014 by B&#x0142;a&#x017C;ej Ostoja Lniski. All rights reserved.
+ *
+ * © 2016 MyFonts Inc
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Lato:300i,400,400i,700,900');
+
+// @font-face{
+//   font-family: 'ApplegateBrushz';
+//   src: font-url('applegate-brush-z/applegateBrushz.eot');
+//   src: font-url('applegate-brush-z/applegateBrushz.eot?#iefix') format('embedded-opentype'),
+//     font-url('applegate-brush-z/applegateBrushz.woff') format('woff'),
+//     font-url('applegate-brush-z/applegateBrushz.ttf') format('truetype'),
+//     font-url('applegate-brush-z/applegateBrushz.svg#ApplegateBrushz') format('svg');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+@font-face {
+  font-family: 'Kapra';
+  src: font-url('Kapra/Kapra-Regular.eot');
+  src: font-url('Kapra/Kapra-Regular.eot?#iefix') format('embedded-opentype'),
+    font-url('Kapra/Kapra-Regular.woff2') format('woff2'),
+    font-url('Kapra/Kapra-Regular.woff') format('woff'),
+    font-url('Kapra/Kapra-Regular.ttf') format('truetype'),
+    font-url('Kapra/Kapra-Regular.svg#Kapra-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Kapra-Bold';
+  src: font-url('Kapra/Kapra-Bold.eot');
+  src: font-url('Kapra/Kapra-Bold.eot?#iefix') format('embedded-opentype'),
+    font-url('Kapra/Kapra-Bold.woff2') format('woff2'),
+    font-url('Kapra/Kapra-Bold.woff') format('woff'),
+    font-url('Kapra/Kapra-Bold.ttf') format('truetype'),
+    font-url('Kapra/Kapra-Bold.svg#Kapra-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Populaire';
+  src:  font-url('Populaire/3353D6_0_0.eot');
+  src:  font-url('Populaire/3353D6_0_0.eot?#iefix') format('embedded-opentype'),
+        font-url('Populaire/3353D6_0_0.woff2') format('woff2'),
+        font-url('Populaire/3353D6_0_0.woff') format('woff'),
+        font-url('Populaire/3353D6_0_0.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// $applegate-brush-z: 'ApplegateBrushz', sans-serif;
+$lato: 'Lato', sans-serif;
+$kapra: 'Kapra', sans-serif;
+$kapra-bold: 'Kapra-Bold', sans-serif;
+$populaire: 'Populaire', sans-serif;
+// Gotham is served by cloud.typography.com
+$gotham: 'Gotham A', 'Gotham B', sans-serif;
+
+// =======================
+// Mixins
+// =======================
+
+@mixin transition($prop, $duration, $timing, $opt-delay:"") {
+  -webkit-transition: $prop $duration $timing unquote($opt-delay);
+  -moz-transition: $prop $duration $timing unquote($opt-delay);
+  -o-transition: $prop $duration $timing unquote($opt-delay);
+  transition: $prop $duration $timing unquote($opt-delay);
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-shadow($horizontal, $vertical, $blur, $color) {
+  -webkit-box-shadow: $horizontal $vertical $blur $color;
+  -moz-box-shadow: $horizontal $vertical $blur $color;
+  box-shadow: $horizontal $vertical $blur $color;
+}
+
+// Targets only IE 10 and IE 11
+// Use:
+//body {
+//  background: red;
+//  @include target-legacy-ie {
+//    background: green;
+//  }
+//}
+
+@mixin target-legacy-ie {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+
+
+// =======================
+// Icons
+// =======================
+
+@font-face {
+ font-family: 'applegate-icons';
+ src: url('https://applegate.com/help-page-assets/fonts/applegate-icons/applegate-icons.eot');
+ src: url('https://applegate.com/help-page-assets/fonts/applegate-icons/applegate-icons.eot?#iefix') format('embedded-opentype'),
+      url('https://applegate.com/help-page-assets/fonts/applegate-icons/applegate-icons.woff') format('woff'),
+      url('https://applegate.com/help-page-assets/fonts/applegate-icons/applegate-icons.ttf') format('truetype'),
+      url('https://applegate.com/help-page-assets/fonts/applegate-icons/applegate-icons.svg?#applegate-icons') format('svg');
+ display: inline-block;
+ font-weight: normal;
+ font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"], .icon, %icon {
+  display: inline-block;
+  font-family: 'applegate-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  &:before {
+    font-family: 'applegate-icons' !important;
+  }
+}
+
+@mixin multi-color-icon($outline-content, $background-content, $border, $background) {
+  position:relative;
+  &:before {
+    content: $background-content;
+    color:$background;
+  }
+  &:after {
+    content: $outline-content;
+    color:$border;
+    position:absolute;
+    left:0;
+  }
+}
+.icon-snacking:before {
+  content: "\e926";
+}
+.icon-cheese-slice:before {
+  content: "\e925";
+}
+.icon-barn {
+  &:before {
+    content: "\e924";
+  }
+}
+.icon-dairy-free {
+  &:before {
+    content: "\e901";
+  }
+}
+.icon-gluten-free {
+  &:before {
+    content: "\e913";
+  }
+}
+.icon-casein-free {
+  &:before {
+    content: "\e900";
+  }
+}
+.icon-search {
+  &:before {
+    content: "\e903";
+  }
+}
+.icon-menu {
+  &:before {
+    content: "\e904";
+  }
+}
+.icon-cross {
+  &:before {
+    content: "\e905";
+  }
+}
+.icon-traditional-italian {
+  &:before {
+    content: "\e90f";
+  }
+}
+.icon-hot-dogs {
+  &:before {
+    content: "\e90e";
+  }
+}
+.icon-dinner-sausage {
+  &:before {
+    content: "\e90d";
+  }
+}
+.icon-deli-meat {
+  &:before {
+    content: "\e90c";
+  }
+}
+.icon-corn-dogs {
+  &:before {
+    content: "\e90b";
+  }
+}
+.icon-grilled-chicken-strips, .icon-chicken-strips {
+  &:before {
+    content: "\e90a";
+  }
+}
+.icon-cheese {
+  &:before {
+    content: "\e909";
+  }
+}
+.icon-burgers {
+  &:before {
+    content: "\e908";
+  }
+}
+.icon-breakfast-sausage {
+  &:before {
+    content: "\e907";
+  }
+}
+.icon-breaded-chicken {
+  &:before {
+    content: "\e906";
+  }
+}
+.icon-bacon {
+  &:before {
+    content: "\e910";
+  }
+}
+.icon-video-play {
+  @include multi-color-icon("\e911", "\e912", $black, $red);
+}
+.icon-wheat {
+  &:before {
+    content: "\e913";
+  }
+}
+.icon-appetizers {
+  &:before {
+    content: "\e914";
+  }
+}
+.icon-breakfasts {
+  &:before {
+    content: "\e915";
+  }
+}
+.icon-entrees {
+  &:before {
+    content: "\e916";
+  }
+}
+.icon-salads {
+  &:before {
+    content: "\e917";
+  }
+}
+.icon-side-dishes {
+  &:before {
+    content: "\e918";
+  }
+}
+.icon-soups {
+  &:before {
+    content: "\e919";
+  }
+}
+.icon-sweets {
+  &:before {
+    content: "\e91a";
+  }
+}
+.icon-reduced-sodium {
+  &:before {
+    content: "\e91b";
+  }
+}
+.icon-rbgh-free {
+  &:before {
+    content: "\e91c";
+  }
+}
+.icon-sugar-free {
+  &:before {
+    content: "\e91d";
+  }
+}
+.icon-grass-fed {
+  &:before {
+    content: "\e91e";
+  }
+}
+.icon-turkey:before {
+  content: "\e91f";
+}
+.icon-pig:before {
+  content: "\e920";
+}
+.icon-cow:before {
+  content: "\e921";
+}
+.icon-chicken:before {
+  content: "\e922";
+}
+.icon-whole30-approved,
+.icon-whole30 {
+  &:before {
+    content: "\e923";
+  }
+}

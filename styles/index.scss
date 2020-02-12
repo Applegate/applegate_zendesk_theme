@@ -1,4 +1,4 @@
-@import "variables";
+@import "custom/zendesk_variables_overrides";
 @import "mixins";
 @import "base";
 @import "buttons";
@@ -35,4 +35,11 @@
 @import "metadata";
 @import "icons";
 @import "user-profiles";
-@import "search_results"
+@import "search_results";
+
+// Custom Styles
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css";
+@import "custom/foundation.min.scss";
+@import "custom/utilities";
+@import "custom/site_styles";
+@import "custom/zendesk_overrides";
