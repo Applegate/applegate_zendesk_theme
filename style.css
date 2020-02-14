@@ -12891,6 +12891,12 @@ body.is-reveal-open {
   font-weight: normal;
 }
 
+#get-in-touch img {
+  margin: 0 10px;
+  max-width: 25%;
+  vertical-align: bottom;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: #4A4A4A !important;
 }
@@ -12959,8 +12965,8 @@ ol ol, ol ul, ul ol, ul ul {
 }
 
 .sidenav-item {
-  margin-bottom: 0;
   color: #46772E;
+  margin-bottom: 5px;
 }
 
 .sidenav-item.current-article,
@@ -12995,6 +13001,7 @@ ol ol, ol ul, ul ol, ul ul {
 
 .page-header-description {
   color: #46772E;
+  flex-basis: 100%;
   font-style: unset;
   font-weight: bold;
 }

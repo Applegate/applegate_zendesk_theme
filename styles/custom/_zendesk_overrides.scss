@@ -70,8 +70,8 @@ ol ol, ol ul, ul ol, ul ul {
 }
 
 .sidenav-item {
-  margin-bottom: 0;
   color: $dark-green;
+  margin-bottom: 5px;
 }
 
 .sidenav-item.current-article,
@@ -106,6 +106,7 @@ ol ol, ol ul, ul ol, ul ul {
 
 .page-header-description {
   color: $dark-green;
+  flex-basis: 100%;
   font-style: unset;
   font-weight: bold;
 }
