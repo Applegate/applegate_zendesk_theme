@@ -27,19 +27,27 @@
         {{#each categories}}
           {{#if ../has_multiple_categories}}
             <li class="blocks-item">
-              <a href='{{url}}' class="blocks-item-link">
+
                 {{#is name 'Product Questions'}}
-                  <img src="{{asset 'product-questions.png'}}" class="float-center" />
+                  <a href='{{url}}' class="blocks-item-link">
+                    <img src="{{asset 'product-questions.png'}}" class="float-center" />
+                  </a>
                   {{else}}
                     {{#is name 'Where to Buy'}}
-                      <img src="{{asset 'where-to-buy.png'}}" class="float-center">
+                      <a href='{{url}}' class="blocks-item-link">
+                        <img src="{{asset 'where-to-buy.png'}}" class="float-center">
+                      </a>
                       {{else}}
                         {{#is name 'Product Complaints'}}
-                          <img src="{{asset 'product-complaints.png'}}" class="float-center">
+                          <a href='{{url}}' class="blocks-item-link">
+                            <img src="{{asset 'product-complaints.png'}}" class="float-center">
+                          </a>
                           {{else}}
-                          <div class="blocks-item-text"></div>
-                            <span class="blocks-item-title">{{name}}</span>
-                            <span class="blocks-item-description">{{excerpt description}}</span>
+                            {{#is name 'Mission'}}
+                              <a href='{{url}}' class="blocks-item-link">
+                                <img src="{{asset 'mission.png'}}" class="float-center">
+                              </a>
+                            {{/is}}
                         {{/is}}
                     {{/is}}
                 {{/is}}
@@ -52,7 +60,7 @@
     </section>
 
     {{#if promoted_articles}}
-      <section class="articles">
+      <section class="articles" style="display: none;">
         <h2>{{t 'promoted_articles'}}</h2>
         <ul class="article-list promoted-articles">
           {{#each promoted_articles}}
@@ -71,23 +79,6 @@
     {{/if}}
   </section>
 
-  {{#if help_center.community_enabled}}
-    <section class="section home-section community">
-      <h2>{{t 'community'}}</h2>
-      {{#link 'community' class='community-link'}}
-        {{t 'join_conversation'}}
-      {{/link}}
-
-      <div class="community-image"></div>
-    </section>
-  {{/if}}
-
-  <section class="section home-section activity" style="display: none;">
-    {{#if settings.show_recent_activity}}
-      {{recent_activity}}
-    {{/if}}
-  </section>
-
   <div class="content dashboard row" id="other-inquiries">
     <div class="columns medium-10 medium-offset-1">
       <div class="row text-center background--texture__white padding-md margin-bottom-md">
@@ -101,7 +92,7 @@
     <div class="small-12 column">
       <div class='text-center margin-bottom-md' id='get-in-touch'>
         <div class="margin-bottom-sm"><h2 class="h2 headline">Get in Touch</h2></div>
-        <a href='#'><img src="{{asset 'email-us.png'}}" /></a>
+        <a href='mailto:help@applegate.com'><img src="{{asset 'email-us.png'}}" /></a>
         <a href="tel:8665875858"><img src="{{asset 'call-us.png'}}" /></a>
         <a href="https://www.facebook.com/applegate" target="_blank"><img src="{{asset 'facebook-button.png'}}" /></a>
       </div>
