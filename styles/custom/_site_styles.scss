@@ -2170,8 +2170,9 @@ input:disabled {
   position: absolute;
   top: 0;
   left: 50%;
-  margin-left: -68px;
   margin-top: -45px;
+  transform: translateX(-50%);
+  width: unset;
 }
 .footer--links {
   a {
@@ -2907,9 +2908,19 @@ body.is-reveal-open {
 }
 
 .text-link-list {
-
+  display: flex;
+  margin: 0;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .text-link-list__item {
+  display: block;
   font-size: 16px;
+  flex: 0 50%;
+  text-align: center;
+  margin: 10px 0 0;
+  @media (min-width: 768px) {
+    flex: 0 33.33%;
+  }
 }
