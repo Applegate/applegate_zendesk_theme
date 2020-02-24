@@ -21,6 +21,14 @@ ol ol, ol ul, ul ol, ul ul {
 .blocks-item {
   border: 0;
   color: $dark-green;
+  flex: 0 100%;
+  margin: 0;
+  @media (min-width: 640px) {
+    flex: 0 50%;
+  }
+  @media (min-width: 1024px) {
+    flex: 0 25%;
+  }
   &:active,
   &:focus {
     background-color: unset;

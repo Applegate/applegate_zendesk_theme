@@ -27,7 +27,6 @@
         {{#each categories}}
           {{#if ../has_multiple_categories}}
             <li class="blocks-item">
-
                 {{#is name 'Product Questions'}}
                   <a href='{{url}}' class="blocks-item-link">
                     <img src="{{asset 'product-questions.png'}}" class="float-center" />
@@ -83,7 +82,17 @@
     <div class="columns medium-10 medium-offset-1">
       <div class="row text-center background--texture__white padding-md margin-bottom-md">
         <h2 class="headline h2 margin-bottom-md">Other Inquiries</h2>
-        <p class="text-center">Links will appear here..</p>
+        <ul class="text-link-list row">
+          {{#each categories}}
+            {{#if ../has_multiple_categories}}
+              {{#is name 'Product Questions'}}
+                {{#each sections}}
+                  <li class="text-link-list__item columns medium-4 small-6"><a href="{{url}}" class="link--green">{{name}}</a></li>
+                {{/each}}
+              {{/is}}
+            {{/if}}
+          {{/each}}
+        </ul>
       </div>
     </div>
   </div>

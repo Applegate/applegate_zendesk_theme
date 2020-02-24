@@ -12897,6 +12897,10 @@ body.is-reveal-open {
   vertical-align: bottom;
 }
 
+.text-link-list__item {
+  font-size: 16px;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: #4A4A4A !important;
 }
@@ -12920,6 +12924,20 @@ ol ol, ol ul, ul ol, ul ul {
 .blocks-item {
   border: 0;
   color: #46772E;
+  flex: 0 100%;
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .blocks-item {
+    flex: 0 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .blocks-item {
+    flex: 0 25%;
+  }
 }
 
 .blocks-item:active, .blocks-item:focus {
