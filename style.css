@@ -12899,6 +12899,7 @@ body.is-reveal-open {
 }
 
 .text-link-list {
+  align-items: center;
   display: flex;
   margin: 0;
   flex-wrap: wrap;
@@ -12909,6 +12910,7 @@ body.is-reveal-open {
   display: block;
   font-size: 16px;
   flex: 0 50%;
+  padding: 0 10px;
   text-align: center;
   margin: 10px 0 0;
 }

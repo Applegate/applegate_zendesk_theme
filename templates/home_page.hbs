@@ -87,7 +87,11 @@
             {{#if ../has_multiple_categories}}
               {{#is name 'Product Questions'}}
                 {{#each sections}}
-                  <li class="text-link-list__item margin-bottom-sm"><a href="{{url}}" class="link--green">{{name}}</a></li>
+                  {{#is name 'Other Inquiries'}}
+                    {{#each articles}}
+                    <li class="text-link-list__item"><a href="{{url}}" class="link--green">{{title}}</a></li>
+                    {{/each}}
+                  {{/is}}
                 {{/each}}
               {{/is}}
             {{/if}}
