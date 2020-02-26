@@ -12899,7 +12899,6 @@ body.is-reveal-open {
 }
 
 .text-link-list {
-  align-items: center;
   display: flex;
   margin: 0;
   flex-wrap: wrap;
