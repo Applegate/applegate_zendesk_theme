@@ -45,11 +45,14 @@ You can read more about assets [here](https://support.zendesk.com/hc/en-us/artic
 
 
 ## Publishing your theme
-After you have customized your theme you can download the repository as a `zip` file and import it into Theming Center.
-
-You can follow the documentation for importing [here](https://support.zendesk.com/hc/en-us/articles/115012794168).
-
-You can also import directly from GitHub - learn more [here](https://support.zendesk.com/hc/en-us/community/posts/360004400007).
+To publish this theme to production, follow these steps.
+* Make your changes in the master branch.
+* In `manifest.json`, update the `version` to a number higher than the current version.
+* Commit all your changes.
+* Go to https://applegate.zendesk.com/theming/workbench
+* In the Applegate theme box, click the three dots in the bottom right corner and choose 'Update from Github'.
+* A modal will appear and you can check the box that says 'Keep theme settings' unless you need to overwrite these and click 'Update'.
+* A message will appear saying whether it was successful.
 
 ## Templates
 The theme includes all the templates that are used for a Help Center that has *all* the features available.
