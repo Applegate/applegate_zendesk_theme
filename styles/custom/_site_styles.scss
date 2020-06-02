@@ -138,12 +138,12 @@ span {
   }
 }
 a {
-  color: $off-black;
+  color: $black;
   text-decoration: none;
   &:hover,
   &:active,
   &:focus {
-    color: $off-black;
+    color: $black;
     text-decoration: none;
   }
   .green--links & {
