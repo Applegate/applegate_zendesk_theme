@@ -48,46 +48,46 @@ $text-color: #1F1724;
 
 // @font-face{
 //   font-family: 'ApplegateBrushz';
-//   src: font-url('applegate-brush-z/applegateBrushz.eot');
-//   src: font-url('applegate-brush-z/applegateBrushz.eot?#iefix') format('embedded-opentype'),
-//     font-url('applegate-brush-z/applegateBrushz.woff') format('woff'),
-//     font-url('applegate-brush-z/applegateBrushz.ttf') format('truetype'),
-//     font-url('applegate-brush-z/applegateBrushz.svg#ApplegateBrushz') format('svg');
+//   src: url('https://applegate.com/fonts/applegate-brush-z/applegateBrushz.eot');
+//   src: url('https://applegate.com/fonts/applegate-brush-z/applegateBrushz.eot?#iefix') format('embedded-opentype'),
+//     url('https://applegate.com/fonts/applegate-brush-z/applegateBrushz.woff') format('woff'),
+//     url('https://applegate.com/fonts/applegate-brush-z/applegateBrushz.ttf') format('truetype'),
+//     url('https://applegate.com/fonts/applegate-brush-z/applegateBrushz.svg#ApplegateBrushz') format('svg');
 //   font-weight: normal;
 //   font-style: normal;
 // }
 
 @font-face {
   font-family: 'Kapra';
-  src: font-url('Kapra/Kapra-Regular.eot');
-  src: font-url('Kapra/Kapra-Regular.eot?#iefix') format('embedded-opentype'),
-    font-url('Kapra/Kapra-Regular.woff2') format('woff2'),
-    font-url('Kapra/Kapra-Regular.woff') format('woff'),
-    font-url('Kapra/Kapra-Regular.ttf') format('truetype'),
-    font-url('Kapra/Kapra-Regular.svg#Kapra-Regular') format('svg');
+  src: url('https://applegate.com/fonts/Kapra/Kapra-Regular.eot');
+  src: url('https://applegate.com/fonts/Kapra/Kapra-Regular.eot?#iefix') format('embedded-opentype'),
+    url('https://applegate.com/fonts/Kapra/Kapra-Regular.woff2') format('woff2'),
+    url('https://applegate.com/fonts/Kapra/Kapra-Regular.woff') format('woff'),
+    url('https://applegate.com/fonts/Kapra/Kapra-Regular.ttf') format('truetype'),
+    url('https://applegate.com/fonts/Kapra/Kapra-Regular.svg#Kapra-Regular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Kapra-Bold';
-  src: font-url('Kapra/Kapra-Bold.eot');
-  src: font-url('Kapra/Kapra-Bold.eot?#iefix') format('embedded-opentype'),
-    font-url('Kapra/Kapra-Bold.woff2') format('woff2'),
-    font-url('Kapra/Kapra-Bold.woff') format('woff'),
-    font-url('Kapra/Kapra-Bold.ttf') format('truetype'),
-    font-url('Kapra/Kapra-Bold.svg#Kapra-Bold') format('svg');
+  src: url('https://applegate.com/fonts/Kapra/Kapra-Bold.eot');
+  src: url('https://applegate.com/fonts/Kapra/Kapra-Bold.eot?#iefix') format('embedded-opentype'),
+    url('https://applegate.com/fonts/Kapra/Kapra-Bold.woff2') format('woff2'),
+    url('https://applegate.com/fonts/Kapra/Kapra-Bold.woff') format('woff'),
+    url('https://applegate.com/fonts/Kapra/Kapra-Bold.ttf') format('truetype'),
+    url('https://applegate.com/fonts/Kapra/Kapra-Bold.svg#Kapra-Bold') format('svg');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Populaire';
-  src:  font-url('Populaire/3353D6_0_0.eot');
-  src:  font-url('Populaire/3353D6_0_0.eot?#iefix') format('embedded-opentype'),
-        font-url('Populaire/3353D6_0_0.woff2') format('woff2'),
-        font-url('Populaire/3353D6_0_0.woff') format('woff'),
-        font-url('Populaire/3353D6_0_0.ttf') format('truetype');
+  src:  url('https://applegate.com/fonts/Populaire/3353D6_0_0.eot');
+  src:  url('https://applegate.com/fonts/Populaire/3353D6_0_0.eot?#iefix') format('embedded-opentype'),
+        url('https://applegate.com/fonts/Populaire/3353D6_0_0.woff2') format('woff2'),
+        url('https://applegate.com/fonts/Populaire/3353D6_0_0.woff') format('woff'),
+        url('https://applegate.com/fonts/Populaire/3353D6_0_0.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
