@@ -9104,6 +9104,12 @@ b {
 }
 
 @media only screen and (min-width: 768px) {
+  .text-right--medium-up {
+    text-align: right;
+  }
+}
+
+@media only screen and (min-width: 768px) {
   .block-for-medium {
     display: block;
   }

@@ -154,6 +154,12 @@ $large-screen: 1200px;
 // Utilities
 // =======================
 
+.text-right--medium-up {
+  @media only screen and (min-width: $small-screen) {
+    text-align: right;
+  }
+}
+
 .block-for-medium {
   @media only screen and (min-width: $small-screen) {
     display: block;
