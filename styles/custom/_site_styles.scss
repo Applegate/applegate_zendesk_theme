@@ -635,14 +635,14 @@ select {
   }
 }
 .logo {
-  max-width: 200px;
+  max-width: 180px;
   width: 100%;
   margin-bottom: 15px;
   margin-top: 15px;
   @media only screen and (max-width: $small-screen) {
     margin-top: 0;
     margin-bottom: 25px;
-    max-width: 150px;
+    max-width: 130px;
   }
 }
 .hide-claims {
