@@ -2903,7 +2903,6 @@ body.is-reveal-open {
 
 #get-in-touch img {
   margin: 0 10px;
-  max-width: 25%;
   vertical-align: bottom;
 }
 
@@ -2923,5 +2922,15 @@ body.is-reveal-open {
   margin: 10px 0 0;
   @media (min-width: 768px) {
     flex: 0 33.33%;
+  }
+}
+
+.contact-options__item {
+  display: inline-block;
+  margin: 0 10px;
+  p {
+    color: $off-black;
+    font-family: $kapra-bold;
+    font-size: 24px;
   }
 }
