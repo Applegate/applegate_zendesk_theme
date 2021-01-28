@@ -9262,7 +9262,7 @@ b {
 
 .button, .social-inline__item, .product-reviews .p-w-r .pr-accessible-btn,
 .product-reviews .p-w-r .pr-review-snapshot .pr-review-snapshot-simple .pr-review-snapshot-snippets .pr-snippet-read-and-write a, .pr-single-product-review .thank-you-page h5 a,
-.pr-single-product-review .p-w-r .pr-accessible-btn, .carousel--product .slick-next, .carousel--product .slick-prev, .apgt-pr-reviewdisplay .p-w-r .pr-review-display .pr-snippet-write-review-link, .button--outline, .modaltip, .pagination em, .border-radius--uneven {
+.pr-single-product-review .p-w-r .pr-accessible-btn, .carousel--product .slick-next, .carousel--product .slick-prev, .apgt-pr-reviewdisplay .p-w-r .pr-review-display .pr-snippet-write-review-link, footer input[type="submit"], .button--outline, .modaltip, .pagination em, .border-radius--uneven {
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 }
 
@@ -9949,7 +9949,7 @@ a:hover, a:active, a:focus {
 
 .button, .social-inline__item, .product-reviews .p-w-r .pr-accessible-btn,
 .product-reviews .p-w-r .pr-review-snapshot .pr-review-snapshot-simple .pr-review-snapshot-snippets .pr-snippet-read-and-write a, .pr-single-product-review .thank-you-page h5 a,
-.pr-single-product-review .p-w-r .pr-accessible-btn, .carousel--product .slick-next, .carousel--product .slick-prev, .apgt-pr-reviewdisplay .p-w-r .pr-review-display .pr-snippet-write-review-link {
+.pr-single-product-review .p-w-r .pr-accessible-btn, .carousel--product .slick-next, .carousel--product .slick-prev, .apgt-pr-reviewdisplay .p-w-r .pr-review-display .pr-snippet-write-review-link, footer input[type="submit"] {
   -webkit-transition: all 100ms linear ;
   -moz-transition: all 100ms linear ;
   -o-transition: all 100ms linear ;
@@ -9966,7 +9966,7 @@ a:hover, a:active, a:focus {
 .product-reviews .p-w-r .pr-review-snapshot .pr-review-snapshot-simple .pr-review-snapshot-snippets .pr-snippet-read-and-write a:hover, .pr-single-product-review .thank-you-page h5 a:hover,
 .pr-single-product-review .p-w-r .pr-accessible-btn:hover, .carousel--product .slick-next:hover, .carousel--product .slick-prev:hover, .apgt-pr-reviewdisplay .p-w-r .pr-review-display .pr-snippet-write-review-link:hover, .social-inline__item:focus, .product-reviews .p-w-r .pr-accessible-btn:focus,
 .product-reviews .p-w-r .pr-review-snapshot .pr-review-snapshot-simple .pr-review-snapshot-snippets .pr-snippet-read-and-write a:focus, .pr-single-product-review .thank-you-page h5 a:focus,
-.pr-single-product-review .p-w-r .pr-accessible-btn:focus, .carousel--product .slick-next:focus, .carousel--product .slick-prev:focus, .apgt-pr-reviewdisplay .p-w-r .pr-review-display .pr-snippet-write-review-link:focus {
+.pr-single-product-review .p-w-r .pr-accessible-btn:focus, .carousel--product .slick-next:focus, .carousel--product .slick-prev:focus, .apgt-pr-reviewdisplay .p-w-r .pr-review-display .pr-snippet-write-review-link:focus, footer input[type="submit"]:hover, footer input[type="submit"]:focus {
   background-color: #496f22;
   border-color: #496f22;
   text-decoration: none !important;

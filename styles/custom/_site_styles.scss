@@ -168,7 +168,7 @@ a {
     }
   }
 }
-.button, %button {
+.button, %button, footer input[type="submit"] {
   @include transition(all, 100ms, linear);
   background-color: $bright-green;
   background-image: url($assets-button-wide-crop-png);
