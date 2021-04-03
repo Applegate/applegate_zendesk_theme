@@ -229,3 +229,41 @@ zd-autocomplete-multibrand zd-autocomplete-title-multibrand {
 .pagination li:hover:not(.pagination-current) {
   background-color: unset;
 }
+
+// ================
+// Custom Styles
+// ================
+
+#get-in-touch img {
+  margin: 0 10px;
+  vertical-align: bottom;
+}
+
+.text-link-list {
+  display: flex;
+  margin: 0;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.text-link-list__item {
+  display: block;
+  font-size: 16px;
+  flex: 0 50%;
+  padding: 0 10px;
+  text-align: center;
+  margin: 10px 0 0;
+  @media (min-width: 768px) {
+    flex: 0 33.33%;
+  }
+}
+
+.contact-options__item {
+  display: inline-block;
+  margin: 0 10px;
+  p {
+    color: $off-black;
+    font-family: $kapra-bold;
+    font-size: 24px;
+  }
+}

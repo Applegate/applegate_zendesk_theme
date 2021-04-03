@@ -1,6 +1,6 @@
 <div class="company-header text-center">
   <div class="row">
-    <div class="columns small-12 margin-bottom-lg">
+    <div class="col-12 margin-bottom-lg">
       <div id="support-header">
         <div class="wrapper">
           <h1 class="headline">Help Center</h1>
@@ -8,7 +8,7 @@
             product information and more.</p>
           <br><br>
           <div class="row">
-            <div class="columns medium-6 medium-offset-3">
+            <div class="col-md-6 offset-md-3">
               <h2 class="visibility-hidden">{{ t 'search' }}</h2>
               {{search submit=false instant=settings.instant_search class='search search-full'}}
             </div>
@@ -29,22 +29,22 @@
             <li class="blocks-item">
                 {{#is name 'Product Questions'}}
                   <a href='{{url}}' class="blocks-item-link">
-                    <img src="{{asset 'product-questions.png'}}" class="float-center" />
+                    <img src="{{asset 'product-questions.png'}}" class="img-fluid" />
                   </a>
                   {{else}}
                     {{#is name 'Where to Buy'}}
                       <a href='{{url}}' class="blocks-item-link">
-                        <img src="{{asset 'where-to-buy.png'}}" class="float-center">
+                        <img src="{{asset 'where-to-buy.png'}}" class="img-fluid">
                       </a>
                       {{else}}
                         {{#is name 'Product Complaints'}}
                           <a href='{{url}}' class="blocks-item-link">
-                            <img src="{{asset 'product-complaints.png'}}" class="float-center">
+                            <img src="{{asset 'product-complaints.png'}}" class="img-fluid">
                           </a>
                           {{else}}
                             {{#is name 'Mission'}}
                               <a href='{{url}}' class="blocks-item-link">
-                                <img src="{{asset 'mission.png'}}" class="float-center">
+                                <img src="{{asset 'mission.png'}}" class="img-fluid">
                               </a>
                             {{/is}}
                         {{/is}}
@@ -79,7 +79,7 @@
   </section>
 
   <div class="content dashboard row" id="other-inquiries">
-    <div class="columns medium-10 medium-offset-1">
+    <div class="col-md-10 offset-md-1">
       <div class="row text-center background--texture__white padding-md margin-bottom-md">
         <h2 class="headline h2">Other Inquiries</h2>
         <ul class="text-link-list row">
@@ -102,7 +102,7 @@
   </div>
 
   <div class="row">
-    <div class="small-12 column">
+    <div class="col-12">
       <div class='text-center margin-bottom-md' id='get-in-touch'>
         <h2 class="h2 headline margin-bottom-sm">Get in Touch</h2>
         <ul class="contact-options">
@@ -125,11 +125,11 @@
             </a>
           </li>
           <li class="contact-options__item">
-            <a href="sms://+19087255800?&amp;body=Hey%20Applegate%20🌭🥓🍔%20I%20have%20a%20question..." target="_blank" class=" hide-for-medium">
+            <a href="sms://+19087255800?&amp;body=Hey%20Applegate%20🌭🥓🍔%20I%20have%20a%20question..." target="_blank" class="d-md-none">
               <p><img src="{{asset 'texting-icon.png'}}" /></p>
               <p>908-725-5800</p>
             </a>
-            <div class="show-for-medium">
+            <div class="d-none d-md-block">
               <p><img src="{{asset 'texting-icon.png'}}" /></p>
               <p>908-725-5800</p>
             </div>

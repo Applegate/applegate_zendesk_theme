@@ -4,62 +4,86 @@
 
 <div class="wrap--outer">
   <div class="wrap--inner">
-    <div class="wrapper">
-      <div class="row padding-top-xs">
-        <div class="small-6 medium-12 columns medium-text-center">
-          <div class="logo--wrapper">
+    {{!-- Nav Bar --}}
+    <div class="container">
+      <div class="row">
+        <div class="col-6 col-md-auto">
+          <div class="logo--wrapper d-flex justify-content-md-center">
             <a href="https://applegate.com/">
-              <img class="logo hide-for-medium" alt="AppleGate"
+              <img class="logo d-md-none" alt="AppleGate"
                 src="{{asset 'applegate-logo.svg'}}">
-              <img class="logo show-for-medium" alt="AppleGate"
+              <img class="logo d-none d-md-block img-fluid" alt="AppleGate"
                 src="{{asset 'applegate-logo-w-tag.svg'}}">
-            </a> </div>
+            </a>
+          </div>
         </div>
-        <div class="small-6 medium-12 columns">
+        <div class="col-6 col-md d-flex align-items-center align-items-md-end">
           <ul class="navigation--menu">
-            <li class="show-for-medium navigation--menu__dropdown js-nav-dropdown li--default"
-              data-target="navigation--products">
-              <a class=" navigation__link" href="https://applegate.com/products">
-                <span>Products</span>
-              </a> </li>
-            <li class="show-for-medium li--default">
-              <a class=" navigation__link" href="https://applegate.com/locator">
-                <span>Where To Buy</span>
-              </a> </li>
-            <li class="show-for-medium li--default">
-              <a class=" navigation__link" href="https://applegate.com/mission">
-                <span>Mission</span>
-              </a> </li>
-            <li class="show-for-medium li--default">
-              <a class=" navigation__link" href="https://applegate.com/recipes">
-                <span>Recipes</span>
-              </a> </li>
-            <li class="show-for-medium li--default">
-              <a class="navigation__link active" href="https://applegate.zendesk.com/">
-                <span>Help</span>
-              </a> </li>
-            <li
-              class="show-for-medium navigation--menu__dropdown js-nav-dropdown js-nav-social li--default position--relative"
-              data-target="navigation--social" style="">
-              <span class="navigation__link cursor--default"><span>Social</span></span>
-              <div class="navigation--social navigation--dropdown" style="display: none;">
-                <ul class="margin-0" style="width: 134px;">
-                  <li><a href="https://www.facebook.com/applegate/" title="Visit Applegate on Facebook"><i
-                        class="fa fa-facebook-square h3"></i></a></li>
-                  <li><a href="https://twitter.com/Applegate" title="Visit Applegate on Twitter"><i
-                        class="fa fa-twitter-square h3"></i></a></li>
-                  <li><a href="https://www.instagram.com/applegate/" title="Visit Applegate on Instagram"><i
-                        class="fa fa-instagram h3"></i></a></li>
-                  <li><a href="https://www.pinterest.com/applegatefarms/" title="Visit Applegate on Pinterest"><i
-                        class="fa fa-pinterest-square h3"></i></a></li>
-                  <li><a href="https://www.youtube.com/user/ApplegateFarms" title="Visit Applegate on YouTube"><i
-                        class="fa fa-youtube-square h3"></i></a></li>
-                  <li><a href="https://www.linkedin.com/company/applegate" title="Visit Applegate on LinkedIn"><i
-                        class="fa fa-linkedin-square h3"></i></a></li>
+            <li class="d-none d-md-inline-block navigation--menu__dropdown js-nav-dropdown li--default" data-target="navigation--products">
+              <a class="navigation__link" href="https://applegate.com/products">
+                <span class="navigation__text">Products</span>
+              </a>
+            </li>
+            <li class="d-none d-md-inline-block li--default">
+              <a class="navigation__link" href="https://applegate.com/locator">
+                <span class="navigation__text">Where To Buy</span>
+              </a>
+            </li>
+            <li class="d-none d-md-inline-block li--default">
+              <a class="navigation__link" href="https://applegate.com/mission">
+                <span class="navigation__text">Mission</span>
+              </a>
+            </li>
+            <li class="d-none d-md-inline-block li--default">
+              <a class="navigation__link" href="https://applegate.com/recipes">
+                <span class="navigation__text">Recipes</span>
+              </a>
+            </li>
+            <li class="d-none d-md-inline-block li--default">
+              <a class="navigation__link" href="https://applegate.zendesk.com/">
+                <span class="navigation__text">Help</span>
+              </a>
+            </li>
+            <li class="d-none d-md-inline-block navigation--menu__dropdown js-nav-dropdown js-nav-social li--default position--relative" data-target="navigation-social">
+              <span class="navigation__link cursor--default">
+                <span class="navigation__text">Social</span>
+              </span>
+              <div class="navigation-social navigation--dropdown">
+                <ul class="navigation-social__list" style="width: 139px">
+                  <li class="navigation-social__list-item">
+                    <a href="https://www.facebook.com/applegate/" title="Visit Applegate on Facebook">
+                      <i class="fa fa-facebook-square h3"></i>
+                    </a>
+                  </li>
+                  <li class="navigation-social__list-item">
+                    <a href="https://twitter.com/Applegate" title="Visit Applegate on Twitter">
+                      <i class="fa fa-twitter-square h3"></i>
+                    </a>
+                  </li>
+                  <li class="navigation-social__list-item">
+                    <a href="https://www.instagram.com/applegate/" title="Visit Applegate on Instagram">
+                      <i class="fa fa-instagram h3"></i>
+                    </a>
+                  </li>
+                  <li class="navigation-social__list-item">
+                    <a href="https://www.pinterest.com/applegatefarms/" title="Visit Applegate on Pinterest">
+                      <i class="fa fa-pinterest-square h3"></i>
+                    </a>
+                  </li>
+                  <li class="navigation-social__list-item">
+                    <a href="https://www.youtube.com/user/ApplegateFarms" title="Visit Applegate on YouTube" >
+                      <i class="fa fa-youtube-square h3"></i>
+                    </a>
+                  </li>
+                  <li class="navigation-social__list-item">
+                    <a href="https://www.linkedin.com/company/applegate" title="Visit Applegate on LinkedIn" >
+                      <i class="fa fa-linkedin-square h3"></i>
+                    </a>
+                  </li>
                 </ul>
               </div>
             </li>
-            <li class="hide-for-medium margin-top-sm">
+            <li class="d-md-none">
               <a href="#" type="button" class="navigation--button js-mobile-nav" data-side-canvas="nav">
                 <i class="icon-menu h3" aria-hidden="true"></i>
               </a>
@@ -67,353 +91,297 @@
           </ul>
         </div>
       </div>
+    </div>
 
-      <div class="row position--relative">
-        <div class="navigation--products navigation--dropdown small-12 columns">
-          <div class="margin-top-md">
-            <div class="row navigation--product-categories">
-              <div class="medium-2 small-6 columns text-center ">
-                <a class="links--underline" href="https://applegate.com/products/snacking/category">
-                  <div class="product--category">
-                    <div class="product--category__image-container">
-                      <div class="vertical-align-padding"></div>
-                      <div class="product--category__wrap">
-                        <i class="product--category__icon icon-snacking"></i>
-                      </div>
-                    </div>
-                    <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Snacking
-                    </p>
-                  </div>
-                </a> </div>
-              <div class="medium-2 small-6 columns text-center ">
-                <a class="links--underline" href="https://applegate.com/products/wall-deli-cheese/category">
-                  <div class="product--category">
-                    <div class="product--category__image-container">
-                      <div class="vertical-align-padding"></div>
-                      <div class="product--category__wrap">
-                        <i class="product--category__icon icon-cheese"></i>
-                      </div>
-                    </div>
-                    <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Cheese</p>
-                  </div>
-                </a> </div>
-              <div class="medium-2 small-6 columns text-center ">
-                <a class="links--underline" href="https://applegate.com/products/wall-deli-meat/category">
-                  <div class="product--category">
-                    <div class="product--category__image-container">
-                      <div class="vertical-align-padding"></div>
-                      <div class="product--category__wrap">
-                        <i class="product--category__icon icon-deli-meat"></i>
-                      </div>
-                    </div>
-                    <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Deli Meat
-                    </p>
-                  </div>
-                </a> </div>
-              <div class="medium-2 small-6 columns text-center ">
-                <a class="links--underline" href="https://applegate.com/products/bacon/category">
-                  <div class="product--category">
-                    <div class="product--category__image-container">
-                      <div class="vertical-align-padding"></div>
-                      <div class="product--category__wrap">
-                        <i class="product--category__icon icon-bacon"></i>
-                      </div>
-                    </div>
-                    <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Bacon</p>
-                  </div>
-                </a> </div>
-              <div class="medium-2 small-6 columns text-center ">
-                <a class="links--underline" href="https://applegate.com/products/hot-dogs/category">
-                  <div class="product--category">
-                    <div class="product--category__image-container">
-                      <div class="vertical-align-padding"></div>
-                      <div class="product--category__wrap">
-                        <i class="product--category__icon icon-hot-dogs"></i>
-                      </div>
-                    </div>
-                    <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Hot Dogs
-                    </p>
-                  </div>
-                </a> </div>
-              <div class="medium-2 small-6 columns text-center end">
-                <a class="links--underline" href="https://applegate.com/products/breakfast-sausage/category">
-                  <div class="product--category">
-                    <div class="product--category__image-container">
-                      <div class="vertical-align-padding"></div>
-                      <div class="product--category__wrap">
-                        <i class="product--category__icon icon-breakfast-sausage"></i>
-                      </div>
-                    </div>
-                    <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Breakfast
-                      Sausage</p>
-                  </div>
-                </a> </div>
-            </div>
-            <div class="row navigation--product-categories">
-              <div class="medium-2 small-6 columns text-center ">
-                <a class="links--underline" href="https://applegate.com/products/breaded-chicken/category">
-                  <div class="product--category">
-                    <div class="product--category__image-container">
-                      <div class="vertical-align-padding"></div>
-                      <div class="product--category__wrap">
-                        <i class="product--category__icon icon-breaded-chicken"></i>
-                      </div>
-                    </div>
-                    <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Breaded
-                      Chicken</p>
-                  </div>
-                </a> </div>
-              <div class="medium-2 small-6 columns text-center ">
-                <a class="links--underline" href="https://applegate.com/products/dinner-sausage/category">
-                  <div class="product--category">
-                    <div class="product--category__image-container">
-                      <div class="vertical-align-padding"></div>
-                      <div class="product--category__wrap">
-                        <i class="product--category__icon icon-dinner-sausage"></i>
-                      </div>
-                    </div>
-                    <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Dinner
-                      Sausage</p>
-                  </div>
-                </a> </div>
-              <div class="medium-2 small-6 columns text-center ">
-                <a class="links--underline" href="https://applegate.com/products/wall-deli-italian/category">
-                  <div class="product--category">
-                    <div class="product--category__image-container">
-                      <div class="vertical-align-padding"></div>
-                      <div class="product--category__wrap">
-                        <i class="product--category__icon icon-traditional-italian"></i>
-                      </div>
-                    </div>
-                    <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Traditional
-                      Italian</p>
-                  </div>
-                </a> </div>
-              <div class="medium-2 small-6 columns text-center ">
-                <a class="links--underline" href="https://applegate.com/products/burgers/category">
-                  <div class="product--category">
-                    <div class="product--category__image-container">
-                      <div class="vertical-align-padding"></div>
-                      <div class="product--category__wrap">
-                        <i class="product--category__icon icon-burgers"></i>
-                      </div>
-                    </div>
-                    <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Burgers</p>
-                  </div>
-                </a> </div>
-              <div class="medium-2 small-6 columns text-center ">
-                <a class="links--underline" href="https://applegate.com/products/corn-dogs/category">
-                  <div class="product--category">
-                    <div class="product--category__image-container">
-                      <div class="vertical-align-padding"></div>
-                      <div class="product--category__wrap">
-                        <i class="product--category__icon icon-corn-dogs"></i>
-                      </div>
-                    </div>
-                    <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Corn Dogs
-                    </p>
-                  </div>
-                </a> </div>
-              <div class="medium-2 small-6 columns text-center end">
-                <a class="links--underline" href="https://applegate.com/products/chicken-strips/category">
-                  <div class="product--category">
-                    <div class="product--category__image-container">
-                      <div class="vertical-align-padding"></div>
-                      <div class="product--category__wrap">
-                        <i class="product--category__icon icon-grilled-chicken-strips"></i>
-                      </div>
-                    </div>
-                    <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Grilled
-                      Chicken Strips</p>
-                  </div>
-                </a> </div>
-            </div>
-
-          </div>
-          <div class="clearfix">
-            <div class="small-12 columns">
-              <hr class="hr--green">
-            </div>
-          </div>
-          <div class="clearfix">
-            <div class="medium-7 small-12 columns">
-              <h4 class="headline">Filter Products By:</h4>
-              <div class="margin-top-sm margin-bottom-md">
-                <a class="button--small margin-bottom-xxs"
-                  href="https://applegate.com/products/search?product_type%5B%5D=2">Organic</a>
-                <a class="button--small margin-bottom-xxs"
-                  href="https://applegate.com/products/search?product_type%5B%5D=3">Natural</a>
-                <a class="button--small margin-bottom-xxs"
-                  href="https://applegate.com/products/search?product_filter%5B%5D=Grass+Fed">Grass
-                  Fed</a>
-                <a class="button--small margin-bottom-xxs"
-                  href="https://applegate.com/products/search?product_filter%5B%5D=Non-GMO+Project+Verified">Non-GMO Project
-                  Verified</a>
-                <a class="button--small margin-bottom-xxs"
-                  href="https://applegate.com/products/search?nutritional_tag%5B%5D=Gluten+Free">Gluten
-                  Free</a>
-                <a class="button--small margin-bottom-xxs"
-                  href="https://applegate.com/products/search?nutritional_tag%5B%5D=Dairy+Free">Dairy
-                  Free</a>
-                <a class="button--small margin-bottom-xxs"
-                  href="https://applegate.com/products/search?nutritional_tag%5B%5D=Sugar+Free">Sugar
-                  Free</a>
-                <a class="button--small margin-bottom-xxs"
-                  href="https://applegate.com/products/search?nutritional_tag%5B%5D=Whole30+Approved">Whole30 Approved</a>
-                <a class="button--small margin-bottom-xxs" href="https://applegate.com/allergen_search">Common Allergies</a>
+    {{!-- DropDown Navigation --}}
+    <div class="navigation--products navigation--dropdown container">
+      <div class="margin-top-md">
+        <div class="row navigation--product-categories">
+          <div class="col-md-2 col-6 text-center">
+            <a class="links--underline" href="https://applegate.com/products/bacon/category">
+              <div class="product--category">
+                <div class="product--category__image-container">
+                  <div class="vertical-align-padding"></div>
+                  <div class="product--category__wrap"> <i class="product--category__icon icon-bacon"></i> </div>
+                </div>
+                <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Bacon</p>
               </div>
-            </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-6 text-center">
+            <a class="links--underline" href="https://applegate.com/products/breaded-chicken/category">
+              <div class="product--category">
+                <div class="product--category__image-container">
+                  <div class="vertical-align-padding"></div>
+                  <div class="product--category__wrap"> <i class="product--category__icon icon-breaded-chicken"></i> </div>
+                </div>
+                <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Breaded Chicken</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-6 text-center">
+            <a class="links--underline" href="https://applegate.com/products/breakfast-sausage/category">
+              <div class="product--category">
+                <div class="product--category__image-container">
+                  <div class="vertical-align-padding"></div>
+                  <div class="product--category__wrap"> <i class="product--category__icon icon-breakfast-sausage"></i> </div>
+                </div>
+                <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Breakfast Sausage</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-6 text-center">
+            <a class="links--underline" href="https://applegate.com/products/burgers/category">
+              <div class="product--category">
+                <div class="product--category__image-container">
+                  <div class="vertical-align-padding"></div>
+                  <div class="product--category__wrap"> <i class="product--category__icon icon-burgers"></i> </div>
+                </div>
+                <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Burgers</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-6 text-center">
+            <a class="links--underline" href="https://applegate.com/products/wall-deli-cheese/category">
+              <div class="product--category">
+                <div class="product--category__image-container">
+                  <div class="vertical-align-padding"></div>
+                  <div class="product--category__wrap"> <i class="product--category__icon icon-cheese"></i> </div>
+                </div>
+                <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Cheese</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-6 text-center">
+            <a class="links--underline" href="https://applegate.com/products/wall-deli-meat/category">
+              <div class="product--category">
+                <div class="product--category__image-container">
+                  <div class="vertical-align-padding"></div>
+                  <div class="product--category__wrap"> <i class="product--category__icon icon-deli-meat"></i> </div>
+                </div>
+                <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Deli Meat</p>
+              </div>
+            </a>
           </div>
         </div>
-      </div>
-      <div class="mobile--nav mobile--side-canvas">
-        <div class="padding-top-xxs padding-left-sm padding-bottom-xs padding-right-sm">
-          <div class="text-right">
-            <a href="#" class="js-mobile-nav h2"><i class="icon-cross font--off-black h4"></i></a>
+        <div class="row navigation--product-categories">
+          <div class="col-md-2 col-6 text-center">
+            <a class="links--underline" href="https://applegate.com/products/dinner-sausage/category">
+              <div class="product--category">
+                <div class="product--category__image-container">
+                  <div class="vertical-align-padding"></div>
+                  <div class="product--category__wrap"> <i class="product--category__icon icon-dinner-sausage"></i> </div>
+                </div>
+                <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Dinner Sausage</p>
+              </div>
+            </a>
           </div>
-        </div>
-        <div class="row mobile--nav__claims">
-          <div class="small-12 column">
-            <h2>No Antibiotics Ever</h2>
-            <p class="margin-bottom-sm">Our standard is simple:
-              <span class="display--block">No antibiotics, ever.</span></p>
-            <h2>Applegate Humanely Raised</h2>
-            <p class="margin-bottom-sm">Animals deserve to be handled with care and respect.
-            </p>
-            <h2>No GMO Ingredients</h2>
-            <p class="margin-bottom-sm">Are GMO ingredients good or bad? The jury is out, so we took them out.</p>
-            <p class="text-center margin-top-md"><a href="https://applegate.com/animal-welfare"
-                class="button--outline button--outline--green">Learn more</a></p>
+          <div class="col-md-2 col-6 text-center">
+            <a class="links--underline" href="https://applegate.com/products/chicken-strips/category">
+              <div class="product--category">
+                <div class="product--category__image-container">
+                  <div class="vertical-align-padding"></div>
+                  <div class="product--category__wrap"> <i class="product--category__icon icon-grilled-chicken-strips"></i> </div>
+                </div>
+                <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Grilled Chicken Strips</p>
+              </div>
+            </a>
           </div>
-        </div>
-        <div class="padding-top-xs padding-left-sm padding-right-sm padding-bottom-xxl mobile--nav__list">
-          <ul class="list--unstyled margin-0 h3">
-            <li class="margin-bottom-xxs"><a class="headline" href="https://applegate.com/">Home</a></li>
-            <li class="margin-top-xs margin-bottom-xxs"><a class="headline"
-                href="https://applegate.com/products">Products</a></li>
-          </ul>
-          <div class="row margin-top-sm">
-            <div class="small-6 columns">
-              <div class="margin-bottom-xs">
-                <a href="https://applegate.com/products/snacking/category">Snacking</a>
+          <div class="col-md-2 col-6 text-center">
+            <a class="links--underline" href="https://applegate.com/products/hot-dogs/category">
+              <div class="product--category">
+                <div class="product--category__image-container">
+                  <div class="vertical-align-padding"></div>
+                  <div class="product--category__wrap"> <i class="product--category__icon icon-hot-dogs"></i> </div>
+                </div>
+                <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Hot Dogs</p>
               </div>
-              <div class="margin-bottom-xs">
-                <a href="https://applegate.com/products/wall-deli-cheese/category">Cheese</a>
-              </div>
-              <div class="margin-bottom-xs">
-                <a href="https://applegate.com/products/wall-deli-meat/category">Deli Meat</a>
-              </div>
-              <div class="margin-bottom-xs">
-                <a href="https://applegate.com/products/bacon/category">Bacon</a>
-              </div>
-              <div class="margin-bottom-xs">
-                <a href="https://applegate.com/products/hot-dogs/category">Hot Dogs</a>
-              </div>
-              <div class="margin-bottom-xs">
-                <a href="https://applegate.com/products/breakfast-sausage/category">Breakfast Sausage</a>
-              </div>
-            </div>
-            <div class="small-6 columns">
-              <div class="margin-bottom-xs">
-                <a href="https://applegate.com/products/breaded-chicken/category">Breaded Chicken</a>
-              </div>
-              <div class="margin-bottom-xs">
-                <a href="https://applegate.com/products/dinner-sausage/category">Dinner Sausage</a>
-              </div>
-              <div class="margin-bottom-xs">
-                <a href="https://applegate.com/products/wall-deli-italian/category">Traditional Italian</a>
-              </div>
-              <div class="margin-bottom-xs">
-                <a href="https://applegate.com/products/burgers/category">Burgers</a>
-              </div>
-              <div class="margin-bottom-xs">
-                <a href="https://applegate.com/products/corn-dogs/category">Corn Dogs</a>
-              </div>
-              <div class="margin-bottom-xs">
-                <a href="https://applegate.com/products/chicken-strips/category">Grilled Chicken Strips</a>
-              </div>
-              <div class="margin-bottom-xs">
-                <a href="https://applegate.com/allergen_search">
-                  Allergen Search <i class="icon-search small"></i>
-                </a> </div>
-            </div>
+            </a>
           </div>
-          <ul class="list--unstyled margin-0 h3">
-            <li class="margin-top-xs margin-bottom-xxs">
-              <a class="headline" href="https://applegate.com/locator">Where To Buy</a>
-            </li>
-            <li class="margin-top-xs margin-bottom-xxs">
-              <a class="headline" href="https://applegate.com/mission">Mission</a>
-            </li>
-            <li class="margin-top-xs margin-bottom-xxs">
-              <a class="headline" href="https://applegate.com/animal-welfare">Animal Welfare</a>
-            </li>
-            <li class="margin-top-xs margin-bottom-xxs">
-              <a class="headline" href="https://applegate.com/recipes">Recipes</a>
-            </li>
-            <li class="margin-top-xs margin-bottom-xxs">
-              <a class="headline" href="https://applegate.com/about-us">About Us</a>
-            </li>
-            <li class="margin-top-xs margin-bottom-xxs">
-              <a class="headline" href="https://applegate.com/coupons">Coupons</a>
-            </li>
-            <li class="margin-top-xs margin-bottom-xxs">
-              <a class="headline" href="https://applegate.zendesk.com/">Help</a>
-            </li>
-            <li class="margin-top-xs margin-bottom-xxs">
-              <a class="headline" href="https://applegate.zendesk.com/hc/en-us/requests/new">Contact Us</a>
-            </li>
-            <li class="margin-top-xs margin-bottom-xxs">
-              <a class="headline" href="sms://19087255800?&amp;body=Hey%20Applegate%20🌭🥓🍔%20I%20have%20a%20question...">Text Us</a>
-            </li>
-            <li class="margin-top-xs margin-bottom-xxs">
-              <a class="headline" href="https://applegate.com/review">Review Our Products</a>
-            </li>
-          </ul>
-          <div class="row row--reset margin-top-sm margin-bottom-sm">
-            <div class="small-2 columns">
-              <a href="https://www.facebook.com/applegate/" title="Visit Applegate on Facebook"><i
-                  class="fa fa-facebook-square h2 font--off-black rotate--right"></i></a>
-            </div>
-            <div class="small-2 columns">
-              <a href="https://twitter.com/Applegate" title="Visit Applegate on Twitter"><i
-                  class="fa fa-twitter h2 font--off-black rotate--left"></i></a>
-            </div>
-            <div class="small-2 columns">
-              <a href="https://www.instagram.com/applegate/" title="Visit Applegate on Instagram"><i
-                  class="fa fa-instagram h2 font--off-black rotate--right"></i></a>
-            </div>
-            <div class="small-2 columns">
-              <a href="https://www.pinterest.com/applegatefarms/" title="Visit Applegate on Pinterest"><i
-                  class="fa fa-pinterest-square h2 font--off-black rotate--left"></i></a>
-            </div>
-            <div class="small-2 columns">
-              <a href="https://www.youtube.com/user/ApplegateFarms" title="Visit Applegate on YouTube"><i
-                  class="fa fa-youtube-square h2 font--off-black rotate--left"></i></a>
-            </div>
-            <div class="small-2 columns">
-              <a href="https://www.linkedin.com/company/applegate" title="Visit Applegate on LinkedIn"><i
-                  class="fa fa-linkedin-square h2 font--off-black rotate--left"></i></a>
-            </div>
+          <div class="col-md-2 col-6 text-center">
+            <a class="links--underline" href="https://applegate.com/products/meatballs/category">
+              <div class="product--category">
+                <div class="product--category__image-container">
+                  <div class="vertical-align-padding"></div>
+                  <div class="product--category__wrap"> <i class="product--category__icon icon-meatballs"></i> </div>
+                </div>
+                <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Meatballs</p>
+              </div>
+            </a>
           </div>
-        </div>
-      </div>
-      <div class="position--relative js-modaltip-wrap">
-        <div class="green-stripe--stripe"></div>
-        <div class="green-stripe--text">
-          <div class="small-12 text-center">
-            <a href="https://applegate.com/our-standards" class="display--inline-block" data-side-canvas="claims">
-              <div class="claims">
-                <p class="gotham-bold uppercase display--inline-block">No antibiotics ever</p>
-                <span class="display--inline-block gotham">•</span>
-                <p class="gotham-bold uppercase display--inline-block">Applegate Humanely Raised</p>
-                <span class="display--inline-block gotham">•</span>
-                <p class="gotham-bold uppercase display--inline-block">No GMO Ingredients</p>
-                <i class="claims--arrow fa fa-angle-double-right" aria-hidden="true"></i>
+          <div class="col-md-2 col-6 text-center">
+            <a class="links--underline" href="https://applegate.com/products/snacking/category">
+              <div class="product--category">
+                <div class="product--category__image-container">
+                  <div class="vertical-align-padding"></div>
+                  <div class="product--category__wrap"> <i class="product--category__icon icon-snacking"></i> </div>
+                </div>
+                <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Snacking</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-2 col-6 text-center">
+            <a class="links--underline" href="https://applegate.com/products/wall-deli-italian/category">
+              <div class="product--category">
+                <div class="product--category__image-container">
+                  <div class="vertical-align-padding"></div>
+                  <div class="product--category__wrap"> <i class="product--category__icon icon-traditional-italian"></i> </div>
+                </div>
+                <p class="font-weight--regular line-height--narrow product--category__name margin-bottom-md">Traditional Italian</p>
               </div>
             </a>
           </div>
         </div>
       </div>
+      <div class="col">
+        <hr class="hr--green"> </div>
+      <div class="col-md-7">
+        <h4 class="headline">Filter Products By:</h4>
+        <div class="margin-top-sm margin-bottom-md"> <a class="button button--mini margin-bottom-xxs" href="https://applegate.com/products/search?product_type%5B%5D=2">Organic</a> <a class="button button--mini margin-bottom-xxs" href="https://applegate.com/products/search?product_type%5B%5D=3">Natural</a> <a class="button button--mini margin-bottom-xxs" href="https://applegate.com/products/search?product_filter%5B%5D=Grass+Fed">Grass Fed</a> <a class="button button--mini margin-bottom-xxs" href="https://applegate.com/products/search?product_filter%5B%5D=Non-GMO+Project+Verified">Non-GMO Project Verified</a> <a class="button button--mini margin-bottom-xxs" href="https://applegate.com/products/search?nutritional_tag%5B%5D=Gluten+Free">Gluten Free</a> <a class="button button--mini margin-bottom-xxs" href="https://applegate.com/products/search?nutritional_tag%5B%5D=Dairy+Free">Dairy Free</a> <a class="button button--mini margin-bottom-xxs" href="https://applegate.com/products/search?nutritional_tag%5B%5D=Sugar+Free">Sugar Free</a> <a class="button button--mini margin-bottom-xxs" href="https://applegate.com/products/search?nutritional_tag%5B%5D=Whole30+Approved">Whole30 Approved</a> <a class="button button--mini margin-bottom-xxs" href="https://applegate.com/allergen_search">Common Allergies</a> </div>
+      </div>
     </div>
-    <div class="page-rip">
+
+    {{!-- Mobile Side Nav --}}
+    <div class="mobile--nav mobile--side-canvas">
+      <div class="padding-top-xxs padding-left-sm padding-bottom-xs padding-right-sm">
+        <div class="text-right"> <a href="#" class="js-mobile-nav h2"><i class="icon-cross font--off-black h4"></i></a>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row mobile--nav__claims">
+          <div class="col-12">
+            <h2>No Antibiotics Ever</h2>
+            <p class="margin-bottom-sm">Our standard is simple: <span class="display--block">No antibiotics, ever.</span></p>
+            <h2>Applegate Humanely Raised</h2>
+            <p class="margin-bottom-sm">Animals deserve to be handled with care and respect. </p>
+            <h2>No GMO Ingredients</h2>
+            <p class="margin-bottom-sm">Are GMO ingredients good or bad? The jury is out, so we took them out.</p>
+            <p class="text-center margin-top-md"><a href="https://applegate.com/animal-welfare" class="button--outline button--outline--green">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="padding-top-xs padding-left-sm padding-right-sm padding-bottom-xxl mobile--nav__list">
+        <ul class="list--unstyled margin-0 h3">
+          <li class="margin-bottom-xxs">
+            <a class="headline" href="sms://19087255800?&amp;body=Hey%20Applegate%20🌭🥓🍔%20I%20have%20a%20question...">Text Us</a>
+          </li>
+          <li class="margin-top-xs margin-bottom-xxs"><a class="headline" href="https://applegate.com/">Home</a></li>
+          <li class="margin-top-xs margin-bottom-xxs"><a class="headline" href="https://applegate.com/products">Products</a></li>
+        </ul>
+        <div class="row margin-top-sm">
+          <div class="col-6">
+            <div class="margin-bottom-xs">
+              <a href="https://applegate.com/products/bacon/category">Bacon</a>
+            </div>
+            <div class="margin-bottom-xs">
+              <a href="https://applegate.com/products/breaded-chicken/category">Breaded Chicken</a>
+            </div>
+            <div class="margin-bottom-xs">
+              <a href="https://applegate.com/products/breakfast-sausage/category">Breakfast Sausage</a>
+            </div>
+            <div class="margin-bottom-xs">
+              <a href="https://applegate.com/products/burgers/category">Burgers</a>
+            </div>
+            <div class="margin-bottom-xs">
+              <a href="https://applegate.com/products/wall-deli-cheese/category">Cheese</a>
+            </div>
+            <div class="margin-bottom-xs">
+              <a href="https://applegate.com/products/wall-deli-meat/category">Deli Meat</a>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="margin-bottom-xs">
+              <a href="https://applegate.com/products/dinner-sausage/category">Dinner Sausage</a>
+            </div>
+            <div class="margin-bottom-xs">
+              <a href="https://applegate.com/products/chicken-strips/category">Grilled Chicken Strips</a>
+            </div>
+            <div class="margin-bottom-xs">
+              <a href="https://applegate.com/products/hot-dogs/category">Hot Dogs</a>
+            </div>
+            <div class="margin-bottom-xs">
+              <a href="https://applegate.com/products/meatballs/category">Meatballs</a>
+            </div>
+            <div class="margin-bottom-xs">
+              <a href="https://applegate.com/products/snacking/category">Snacking</a>
+            </div>
+            <div class="margin-bottom-xs">
+              <a href="https://applegate.com/products/wall-deli-italian/category">Traditional Italian</a>
+            </div>
+            <div class="margin-bottom-xs">
+              <a href="https://applegate.com/allergen_search">Allergen Search <i class="icon-search small"></i></a>
+            </div>
+          </div>
+        </div>
+        <ul class="list--unstyled margin-0 h3">
+          <li class="margin-top-xs margin-bottom-xxs">
+            <a class="headline" href="https://applegate.com/locator">Where To Buy</a>
+          </li>
+          <li class="margin-top-xs margin-bottom-xxs">
+            <a class="headline" href="https://applegate.com/mission">Mission</a>
+          </li>
+          <li class="margin-top-xs margin-bottom-xxs">
+            <a class="headline" href="https://applegate.com/animal-welfare">Animal Welfare</a>
+          </li>
+          <li class="margin-top-xs margin-bottom-xxs">
+            <a class="headline" href="https://applegate.com/recipes">Recipes</a>
+          </li>
+          <li class="margin-top-xs margin-bottom-xxs">
+            <a class="headline" href="https://applegate.com/about-us">About Us</a>
+          </li>
+          <li class="margin-top-xs margin-bottom-xxs">
+            <a class="headline" href="https://applegate.com/coupons">Coupons</a>
+          </li>
+          <li class="margin-top-xs margin-bottom-xxs">
+            <a class="headline" href="https://applegate.com/newsletter">Join Our Newsletter</a>
+          </li>
+          <li class="margin-top-xs margin-bottom-xxs">
+            <a class="headline" href="https://applegate.zendesk.com/">Help</a>
+          </li>
+          <li class="margin-top-xs margin-bottom-xxs">
+            <a class="headline" href="https://applegate.zendesk.com/hc/en-us/requests/new">Contact Us</a>
+          </li>
+          <li class="margin-top-xs margin-bottom-xxs">
+            <a class="headline" href="https://applegate.com/review">Review Our Products</a>
+          </li>
+        </ul>
+        <div class="row row--reset margin-top-sm margin-bottom-sm">
+          <div class="col-2">
+            <a href="https://www.facebook.com/applegate/" title="Visit Applegate on Facebook"><i class="fa fa-facebook-square h2 font--off-black rotate--right"></i></a>
+          </div>
+          <div class="col-2">
+            <a href="https://twitter.com/Applegate" title="Visit Applegate on Twitter"><i class="fa fa-twitter h2 font--off-black rotate--left"></i></a>
+          </div>
+          <div class="col-2">
+            <a href="https://www.instagram.com/applegate/" title="Visit Applegate on Instagram"><i class="fa fa-instagram h2 font--off-black rotate--right"></i></a>
+          </div>
+          <div class="col-2">
+            <a href="https://www.pinterest.com/applegatefarms/" title="Visit Applegate on Pinterest"><i class="fa fa-pinterest-square h2 font--off-black rotate--left"></i></a>
+          </div>
+          <div class="col-2">
+            <a href="https://www.youtube.com/user/ApplegateFarms" title="Visit Applegate on YouTube"><i class="fa fa-youtube-square h2 font--off-black rotate--left"></i></a>
+          </div>
+          <div class="col-2">
+            <a href="https://www.linkedin.com/company/applegate" title="Visit Applegate on LinkedIn"><i class="fa fa-linkedin-square h2 font--off-black rotate--left"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{!-- Green Stripe Message --}}
+
+    <div class="position--relative js-modaltip-wrap font-size-0">
+      <div class="green-stripe--stripe"></div>
+      <div class="green-stripe--text">
+        <div class="col-12 text-center">
+          <a href="https://applegate.com/our-standards" class="display--inline-block js-modaltip js-mobile-nav" data-side-canvas="claims">
+            <div class="claims">
+              <p class="gotham-bold uppercase display--inline-block">No Antibiotics Ever</p> <span class="display--inline-block gotham">•</span>
+              <p class="gotham-bold uppercase display--inline-block">Applegate Humanely Raised</p> <span class="display--inline-block gotham">•</span>
+              <p class="gotham-bold uppercase display--inline-block">No GMO Ingredients</p> <i class="claims--arrow fa fa-angle-double-right" aria-hidden="true"></i> </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-rip" id="main-content">
