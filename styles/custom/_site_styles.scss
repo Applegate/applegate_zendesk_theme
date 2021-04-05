@@ -195,7 +195,7 @@ a {
   }
 }
 .button, %button {
-  @include transition(all, 100ms, linear);
+  @include transition(all 100ms linear);
   background-color: $bright-green;
   background-image: url($assets-button-wide-crop-png);
   background-size: 508px;
@@ -236,7 +236,7 @@ a {
 }
 .button--outline,
 %button--outline {
-  @include transition(all, 100ms, linear);
+  @include transition(all 100ms linear);
   background: unset;
   border: 1px solid $white;
   color: $white;
@@ -271,7 +271,7 @@ a {
   padding: 15px 25px;
 }
 .button--small {
-  @include transition(all, 100ms, linear);
+  @include transition(all 100ms linear);
   background-color: $dark-green;
   border-radius: 4px;
   border: 2px solid $dark-green;
@@ -519,7 +519,7 @@ _:-ms-fullscreen, :root {
 // ===============
 .-will-rotate, %-will-rotate {
   will-change: transform;
-  @include transition(all, 100ms, linear);
+  @include transition(all 100ms linear);
   &:hover {
     -moz-transform: rotate(-5deg);
     -webkit-transform: rotate(-5deg);
@@ -822,7 +822,7 @@ select {
 }
 .claims {
   @extend %gotham-bold;
-  @include transition(all, 100ms, linear);
+  @include transition(all 100ms linear);
   color: $cream;
   padding: 5px 0px;
   p {
@@ -1005,13 +1005,13 @@ select {
   height: 100%;
   width: 100%;
   right: 0;
-  @include transition(all, 0.6s, ease-in-out);
+  @include transition(all 0.6s ease-in-out);
   .-extended & {
     right: 100%;
   }
 }
 .mobile--side-canvas {
-  @include transition(all, 0.6s, ease-in-out);
+  @include transition(all 0.6s ease-in-out);
   @extend %background--texture__white;
   display: none;
   position: absolute;
@@ -1655,7 +1655,7 @@ input:disabled {
     @extend %border-radius--uneven;
   }
   a {
-    @include transition(background-color, 100ms, linear);
+    @include transition(background-color 100ms linear);
     display: inline-block;
     &:hover {
       background-color: rgba($bright-green, 0.2);
@@ -1693,7 +1693,7 @@ input:disabled {
   text-align: center;
   width:45px;
   height: 45px;
-  @include transition(all, 100ms, linear);
+  @include transition(all 100ms linear);
   span {
     display: inline;
     font-size: 16px;
@@ -1880,7 +1880,7 @@ input:disabled {
 }
 // fade effect for product navigation
 .js-product-container {
-  @include transition(opacity, 0.2s, linear);
+  @include transition(opacity 0.2s linear);
   opacity: 1;
   &.overflow--hide {
     opacity: 0;
@@ -2072,7 +2072,7 @@ input:disabled {
 }
 .product--recipe {
   .background--white {
-    @include transition(box-shadow, 100ms, linear);
+    @include transition(box-shadow 100ms linear);
     &:hover {
       box-shadow: 0 4px 8px -2px rgba(0,0,0,.25);
     }
@@ -2354,7 +2354,7 @@ input:disabled {
   position: relative;
   &:before {
     @extend %icon;
-    @include transition(all, 100ms, linear);
+    @include transition(all 100ms linear);
     color: $green;
     font-size: 40px;
     position: absolute;
@@ -2449,7 +2449,7 @@ input:disabled {
 }
 .footer--links {
   a {
-    @include transition(border-color, 200ms, linear);
+    @include transition(border-color 200ms linear);
     border-bottom: 2px solid rgba($dark-green, 0);
     &:hover {
       border-bottom: 2px solid $dark-green;

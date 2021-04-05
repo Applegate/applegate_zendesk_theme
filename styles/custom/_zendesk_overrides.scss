@@ -234,6 +234,10 @@ zd-autocomplete-multibrand zd-autocomplete-title-multibrand {
 // Custom Styles
 // ================
 
+input#query {
+  font-weight: 400;
+}
+
 #get-in-touch img {
   margin: 0 10px;
   vertical-align: bottom;
