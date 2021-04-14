@@ -1127,6 +1127,9 @@ select {
       background-image: none;
     }
   }
+  &.page-rip--help {
+    padding-top: 40px;
+  }
 }
 %clean-hero, .clean-hero {
   position: relative;

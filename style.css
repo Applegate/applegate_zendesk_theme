@@ -12363,6 +12363,10 @@ select.bordered {
   background-image: none;
 }
 
+.page-rip.page-rip--help {
+  padding-top: 40px;
+}
+
 .home-hero, .clean-hero {
   position: relative;
   margin-top: -40px;
@@ -14786,6 +14790,10 @@ ol ol, ol ul, ul ol, ul ul {
 .section-subscribe a:hover {
   background-color: #46772E;
   border-color: #46772E;
+}
+
+.button, [role="button"] {
+  width: unset;
 }
 
 .button:after, [role="button"]:after {

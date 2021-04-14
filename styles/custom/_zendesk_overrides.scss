@@ -140,6 +140,7 @@ ol ol, ol ul, ul ol, ul ul {
 }
 
 .button, [role="button"] {
+  width: unset;
   &:after {
     color: $white;
   }
