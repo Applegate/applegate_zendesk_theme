@@ -11976,7 +11976,7 @@ select.bordered {
   background-image: url($assets-line-svg);
   background-repeat: no-repeat;
   background-size: cover;
-  bottom: -9px;
+  bottom: 13px;
   left: -2px;
   background-position: 100% 0px;
 }
