@@ -11905,9 +11905,24 @@ select.bordered {
 
 @media only screen and (min-width: 768px) {
   .navigation--menu li.li--search {
+    font-size: 20px;
     position: absolute;
-    top: 10px;
+    bottom: 15px;
     right: 10px;
+  }
+}
+
+@media only screen and (min-width: 860px) {
+  .navigation--menu li.li--search {
+    bottom: 13px;
+    font-size: 23px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .navigation--menu li.li--search {
+    bottom: 10px;
+    font-size: 26px;
   }
 }
 
@@ -11941,7 +11956,6 @@ select.bordered {
 .navigation--menu .navigation__text {
   font-size: 14px;
   text-transform: uppercase;
-  position: relative;
 }
 
 @media only screen and (min-width: 992px) {
