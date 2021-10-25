@@ -123,20 +123,18 @@
         });
       },
       triggerSideCanvas: function(el) {
-        if (app.isMobile()) {
-          $('.wrap--outer').toggleClass('-extended');
-          this.scrollToTop();
-          // if data-side-canvas is set, add the value as a css class to .wrap-outer
-          if ($(el).data('side-canvas')) {
-            $('.wrap--outer').css('height', $('.mobile--side-canvas').outerHeight());
-            $('.wrap--outer').addClass('-' + $(el).data('side-canvas'));
-          } else {
-          // remove all classes after animation ends
-            setTimeout(function() {
-              $('.wrap--outer').css('height', '');
-              $('.wrap--outer').attr('class', 'wrap--outer');
-            }, 600);
-          }
+        $('.wrap--outer').toggleClass('-extended');
+        this.scrollToTop();
+        // if data-side-canvas is set, add the value as a css class to .wrap-outer
+        if ($(el).data('side-canvas')) {
+          $('.wrap--outer').css('height', $('.mobile--side-canvas').outerHeight());
+          $('.wrap--outer').addClass('-' + $(el).data('side-canvas'));
+        } else {
+        // remove all classes after animation ends
+          setTimeout(function() {
+            $('.wrap--outer').css('height', '');
+            $('.wrap--outer').attr('class', 'wrap--outer');
+          }, 600);
         }
       },
 
