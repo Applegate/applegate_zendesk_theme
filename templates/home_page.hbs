@@ -107,7 +107,7 @@
         <h2 class="h2 headline margin-bottom-sm">Get in Touch</h2>
         <ul class="contact-options">
           <li class="contact-options__item">
-            <a href='mailto:help@applegate.com' class="link-email">
+            <a href="mailto:help@applegate.com" class="link-email">
               <p><img src="{{asset 'email-us.png'}}" /></p>
               <p>Email Us</p>
             </a>
@@ -142,13 +142,4 @@
   <!-- Start of applegate Zendesk Widget script -->
   <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=94ae22da-2826-4eda-8a79-c3cd06054094"> </script>
   <!-- End of applegate Zendesk Widget script -->
-
-  <script>
-    $(window).load(function() {
-      $(".link-email").on("click", function(e){
-        $('.zEWidget-launcher').contents().find('button').click();
-        e.preventDefault();
-      });
-    });
-  </script>
 </div>
