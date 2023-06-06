@@ -373,14 +373,17 @@ $large-screen: 1200px;
 .background--cream, %background--cream {
   background-color: #F3EDDB;
   background-image: url($assets-cream-jpg);
-  background-size: 450px;
+  background-size: 150px;
   background-repeat: repeat;
 }
 
 .background--craft, %background--craft {
   background-image: url($assets-craft-paper-jpg);
   background-repeat: repeat;
-  background-size: 857px;
+  background-size: 200px;
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    background-size: 100px;
+  }
 }
 
 .background--craft--light, %background--craft--light {

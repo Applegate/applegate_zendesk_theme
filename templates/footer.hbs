@@ -20,7 +20,6 @@
               <p class="margin-top-xxs margin-bottom-xxs small font-weight--bold uppercase"><a href="https://applegate.zendesk.com/">Help</a></p>
               <p class="margin-top-xxs margin-bottom-xxs small font-weight--bold uppercase"><a href="https://applegate.com/community">Blog</a></p>
               <p class="margin-top-xxs margin-bottom-xxs small font-weight--bold uppercase"><a href="https://applegate.com/allergen_search">Allergen Search</a></p>
-              <p class="margin-top-xxs margin-bottom-xxs small font-weight--bold uppercase"><a href="https://applegate.com/real_food_has_a_story">Barn Code&reg;</a></p>
               <p class="margin-top-xxs margin-bottom-xxs small font-weight--bold uppercase"><a target="_blank" href="https://www.hormelfoodservice.com/brand/applegate/">Foodservice</a></p>
               <p class="margin-top-xxs margin-bottom-xxs small font-weight--bold uppercase"><a href="https://applegate.com/review">Review Our Products</a></p>
             </div>
@@ -44,7 +43,6 @@
                 <div class="col-lg-4">
                   <p><a href="https://applegate.com/products/chicken-strips/category">Grilled Chicken Strips</a></p>
                   <p><a href="https://applegate.com/products/hot-dogs/category">Hot Dogs</a></p>
-                  <p><a href="https://applegate.com/products/meatballs/category">Meatballs</a></p>
                   <p><a href="https://applegate.com/products/snacking/category">Snacking</a></p>
                   <p><a href="https://applegate.com/products/wall-deli-italian/category">Traditional Italian</a></p>
                 </div>
@@ -73,11 +71,11 @@
           </div>
           <div class="row margin-bottom-md">
             <div class="col-md-8">
-              <p class="small margin-bottom-xxs"><a href="https://applegate.com/site_map">Site Map</a> | <a href="https://applegate.com/terms-of-use">Terms &amp; Conditions</a> | <a href="https://applegate.com/privacy-policy">Privacy Policy</a> | <a href="https://applegate.zendesk.com/hc/en-us/articles/360043759172-Applegate-s-45-Day-Satisfaction-Guarantee">Applegate's 45 Day Satisfaction Guarantee</a></p>
-              <p class="small margin-bottom-xxs"><a href="https://www.hormelfoods.com/ccpa-footer-california-privacy-policy" target="_blank">California Privacy Policy</a> | <a href="https://www.hormelfoods.com/ccpa-footer-california-collection-notice" target="_blank">California Collection Notice</a> | <a href="https://applegate.zendesk.com/hc/en-us/articles/4407304139284">Website Accessibility</a> | <a href="https://www.hormelfoods.com/ccpa-footer-do-not-sell-my-info" target="_blank"><strong>Do Not Sell My Info</strong></a> </p>
+              <p class="small margin-bottom-xxs"><a href="https://applegate.com/site_map">Site Map</a> | <a href="https://applegate.com/terms-of-use">Terms &amp; Conditions</a> | <a href="https://applegate.com/privacy-policy">Privacy Policy</a> | <a href="https://applegate.com/online-cookie-policy">Online Cookie Policy</a> | <a href="https://applegate.zendesk.com/hc/en-us/articles/360043759172-Applegate-s-45-Day-Satisfaction-Guarantee">Applegate's 45 Day Satisfaction Guarantee</a></p>
+              <p class="small margin-bottom-xxs"><a href="https://www.hormelfoods.com/ccpa-footer-california-privacy-policy" target="_blank" class="link--new-window">California Privacy Policy</a> | <a href="https://www.hormelfoods.com/ccpa-footer-california-collection-notice" target="_blank" class="link--new-window">California Collection Notice</a> | <a href="https://applegate.zendesk.com/hc/en-us/articles/4407304139284">Website Accessibility</a> | <a href="https://www.hormelfoods.com/ccpa-footer-do-not-sell-my-info" target="_blank" class="link--new-window"><strong>Do Not Sell My Info</strong></a></p>
             </div>
             <div class="col-md-4 text-right--medium-up">
-              <p class="small margin-bottom-xxs">Copyright &copy;2021 Applegate Farms, LLC</p>
+              <p class="small margin-bottom-xxs">Copyright ©2023 Applegate Farms, LLC</p>
             </div>
           </div>
         </div>
@@ -86,90 +84,247 @@
   </div>{{!-- end .wrap--inner in header.hbs --}}
 </div>{{!-- end .wrap--outer in header.hbs --}}
 <script>
+  function trapFocus(elem, firstTabbableFocused = true) {
+    const tabbable = elem.find('select, input, textarea, button, a').filter(':visible');
+
+    const firstTabbable = tabbable.first();
+    const lastTabbable = tabbable.last();
+    console.log(firstTabbable);
+
+    if (firstTabbableFocused) {
+      /* set focus on first input */
+      firstTabbable.focus();
+      console.log(true);
+    }
+
+    /* redirect last tab to first input */
+    lastTabbable.on('keydown', (e) => {
+      if ((e.which === 9 && !e.shiftKey)) {
+        e.preventDefault();
+        firstTabbable.focus();
+      }
+    });
+
+    /* redirect first shift+tab to last input */
+    firstTabbable.on('keydown', (e) => {
+      if ((e.which === 9 && e.shiftKey)) {
+        e.preventDefault();
+        lastTabbable.focus();
+      }
+    });
+  }
+
   var Public = (function() {
     var app = {
       init: function() {
         navigation.init();
-        this.setSocialNavWidth();
         this.onResize();
+        this.modalTip();
+        this.focusCloseMenu();
+        this.userIsTabbing();
       },
-      setSocialNavWidth: function() {
-        var socialNavWidth = $('.js-nav-social').outerWidth();
-        $('.js-nav-social ul').css('width', socialNavWidth + 'px');
-      },
-      isMobile: function() {
-        if ($(window).outerWidth() <= 768) {
-          return true;
+
+      onResize() {
+      const self = this;
+      $(window).on('resize', () => {
+        // close motaltips
+        $('.modaltip').fadeOut();
+        if (self.isMobile()) {
+          // make sure carousel is not already initialized
+          if (!$('.js-mobile-carousel').hasClass('slick-initialized')) {
+            self.initMobileCarousel();
+          }
         } else {
-          return false;
+          // Remove extended class to hide mobile nav
+          $('.wrap--outer').removeClass('-extended');
+          // make sure carousel is initialized or error
+          if ($('.js-mobile-carousel').hasClass('slick-initialized')) {
+            $('.js-mobile-carousel').slick('unslick');
+          }
         }
-      },
-      onResize: function() {
-        var self = this;
-        $(window).on('resize', function(e) {
-          self.setSocialNavWidth();
+      });
+    },
+
+    modalTip() {
+      const claimHeight = parseInt($('.claims').css('height'), 10);
+
+      const openModalTip = function (height) {
+        if (!Public.app.isMobile()) {
+          $('.modaltip').css('top', height + 5).fadeIn();
+        }
+      };
+
+      const closeModalTip = function () {
+        $('.modaltip').fadeOut(function () {
+          $(this).css('bottom', '').css('margin-top', '');
         });
+      };
+
+      // Opens modal tip on click for desktop
+      $('.js-modaltip').on('click', (e) => {
+        openModalTip(claimHeight);
+        trapFocus($('.modaltip'));
+        e.preventDefault();
+      });
+      // Closes modaltip with the link
+      $('.js-modaltip-close').on('click', (e) => {
+        e.preventDefault();
+        closeModalTip();
+        $('.js-modaltip').focus();
+      });
+      // Closes modaltip by clicking outside of the div
+      $('html').on('click', () => {
+        closeModalTip();
+      });
+      $('.modaltip').on('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeModalTip();
+          $('.js-modaltip').focus();
+        }
+      });
+      // Prevents modal from closing when there is a click on it
+      // after it has opened
+      $('.js-modaltip-wrap').on('click', (e) => {
+        e.stopPropagation();
+      });
+    },
+
+    isMobile() {
+      if (window.innerWidth < 768) {
+        return true;
       }
-    };
+      return false;
+    },
+
+    isLarge() {
+      if (window.innerWidth < 992) {
+        return true;
+      }
+      return false;
+    },
+
+    userIsTabbing() {
+      function handleFirstTab(e) {
+        if (e.keyCode === 9) { // the "I am a keyboard user" key
+          document.body.classList.add('user-is-tabbing');
+          window.removeEventListener('keydown', handleFirstTab);
+        }
+      }
+
+      window.addEventListener('keydown', handleFirstTab);
+    },
+    focusCloseMenu() {
+      $('.js-focus-close').on('keydown', (e) => {
+        if (e.key === 'Enter') {
+          const focusTarget = $(e.target).data('focus-target');
+          setTimeout(() => {
+            $(`.${focusTarget}`).focus();
+          }, 400);
+        }
+      });
+    }
+  };
     var navigation = {
       init: function() {
         this.navigationDropdown();
         this.bindMobileNavigation();
       },
-      bindMobileNavigation: function() {
-        var self = this;
-        $('.js-mobile-nav').on('click', function() {
+
+      // Mobile Navigation
+      bindMobileNavigation() {
+        const self = this;
+        $('.js-mobile-nav').on('click', function (evt) {
+          evt.preventDefault();
           self.triggerSideCanvas(this);
         });
       },
-      triggerSideCanvas: function(el) {
-        $('.wrap--outer').toggleClass('-extended');
-        this.scrollToTop();
-        // if data-side-canvas is set, add the value as a css class to .wrap-outer
-        if ($(el).data('side-canvas')) {
-          $('.wrap--outer').css('height', $('.mobile--side-canvas').outerHeight());
-          $('.wrap--outer').addClass('-' + $(el).data('side-canvas'));
-        } else {
-        // remove all classes after animation ends
-          setTimeout(function() {
-            $('.wrap--outer').css('height', '');
-            $('.wrap--outer').attr('class', 'wrap--outer');
-          }, 600);
+      // This is used for mobile navigation and mobile filter
+      triggerSideCanvas(el) {
+        if (Public.app.isLarge()) {
+          $('.wrap--outer').toggleClass('-extended');
+          this.scrollToTop();
+          // if data-side-canvas is set, add the value as a css class to .wrap-outer
+          if ($(el).data('side-canvas')) {
+            $('.wrap--outer').css('height', $('.mobile--side-canvas').outerHeight());
+            $('.wrap--outer').addClass(`-${$(el).data('side-canvas')}`);
+            const targetCanvas = $(`.mobile--${$(el).data('side-canvas')}`);
+            // trapFocus after the animation ends
+            setTimeout(() => {
+              trapFocus(targetCanvas);
+            }, 400);
+          } else {
+            // remove all classes after animation ends
+            setTimeout(() => {
+              $('.wrap--outer').css('height', '');
+              $('.wrap--outer').attr('class', 'wrap--outer');
+            }, 400);
+          }
         }
       },
 
       scrollToTop: function() {
-      $('.wrap--outer').scrollTop(0);
+        $('.wrap--outer').scrollTop(0);
       },
 
-      navigationDropdown: function() {
-        var delay;
-        $('.js-nav-dropdown').hover(
-          function(event) {
-            var self = this;
-            delay = setTimeout(function() {
-              var targetDropdown = $('.' + $(self).attr('data-target'));
+      navigationDropdown() {
+        $('.js-nav-dropdown').on('mouseenter keydown', function (e) {
+          if (e.key === 'Enter' || e.type === 'mouseenter') {
+            e.preventDefault();
+            const self = this;
+            setTimeout(() => {
+              const targetDropdown = $(`.${$(self).attr('data-target')}`);
               $(self).addClass('toggled');
               targetDropdown.fadeIn(150);
-            }, 300);
-          },
-          function(event) {
-            var targetDropdown = $('.' + $(this).attr('data-target'));
-            if (!$(event.relatedTarget).is(targetDropdown)) {
-              $(this).removeClass('toggled');
-              targetDropdown.fadeOut(150);
-              clearTimeout(delay);
-            }
+              if (e.key === 'Enter') {
+                trapFocus(targetDropdown);
+              }
+            }, 600);
           }
-        );
-        $('.navigation--dropdown').on('mouseleave', function(event) {
+        });
+
+        $('.js-nav-dropdown').on('mouseleave', function (e) {
+          const targetDropdown2 = $(`.${$(this).attr('data-target')}`);
+          if (!$(e.relatedTarget).is(targetDropdown2)) {
+            $(this).removeClass('toggled');
+            targetDropdown2.fadeOut(150);
+            $(this).children().first().attr('aria-expanded', 'false');
+          }
+        });
+
+        $('.navigation-dropdown').on('mouseleave', function (event) {
           // to prevent closing dropdown when ancestor of relatedTarget is .js-nav-dropdown
           if (!$(event.relatedTarget).closest('.toggled').length) {
+            $('.toggled .navigation__link').attr('aria-expanded', 'false');
             $('.toggled').removeClass('toggled');
             $(this).fadeOut(150);
           }
         });
-      }
+
+        $('.navigation-dropdown, .mobile--nav').on('keydown', function (e) {
+          if (e.key === 'Escape') {
+            e.preventDefault();
+            const focusTarget = $('.js-focus-close:visible').attr('data-focus-target');
+            if (Public.app.isLarge()) {
+              Public.navigation.triggerSideCanvas(e.target);
+            } else {
+              $('.toggled .navigation__link').focus().attr('aria-expanded', 'false');
+              $('.toggled').removeClass('toggled');
+              $(this).fadeOut(150);
+            }
+            setTimeout(() => {
+              $(`.${focusTarget}`).focus();
+            }, 400);
+          }
+        });
+
+        $('.exit-dropdown').on('keydown', (e) => {
+          if (e.key === 'Enter') {
+            $('.toggled .navigation__link').focus().attr('aria-expanded', 'false');
+            $('.toggled').removeClass('toggled');
+            $('.navigation-dropdown').fadeOut(150);
+          }
+        });
+      },
     };
     return {
       app: app,
@@ -177,6 +332,6 @@
     };
   })();
   $(function() {
-  Public.app.init();
+    Public.app.init();
   });
 </script>

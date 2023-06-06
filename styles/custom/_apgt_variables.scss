@@ -12,6 +12,7 @@ $red: #e9412c;
 $dark-red: #882526;
 $green: #738b3e;
 $yellow: #dfbf73;
+
 $dark-green: #46772E;
 $bright-green: #5B8A2A;
 $medium-gray: #cacaca;
@@ -193,6 +194,9 @@ $gotham: 'Gotham A', 'Gotham B', sans-serif;
     left:0;
   }
 }
+.icon-meatballs:before {
+  content: "\e927";
+}
 .icon-snacking:before {
   content: "\e926";
 }
@@ -369,4 +373,10 @@ $gotham: 'Gotham A', 'Gotham B', sans-serif;
   &:before {
     content: "\e923";
   }
+}
+.icon-medium:before {
+  content: "\e928";
+}
+.icon-tiktok:before {
+  content: "\e929";
 }

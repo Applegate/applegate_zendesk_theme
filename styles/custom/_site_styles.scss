@@ -80,9 +80,6 @@ span {
 .font--gotham {
   font-family: $gotham;
 }
-.font--green {
-  color: $green;
-}
 .font--dark-green {
   color: $dark-green;
 }
@@ -149,18 +146,6 @@ code {
 // ===============
 // LINKS AND BUTTONS
 // ===============
-.link--green {
-  color: $dark-green;
-  &:hover {
-    color: $black;
-    text-decoration: underline;
-  }
-  @media only screen and (max-width: $xsmall-screen) {
-    &:hover, &:active {
-      text-decoration: none;
-    }
-  }
-}
 a {
   color: $black;
   &:hover, &:focus {
@@ -184,6 +169,95 @@ a {
     }
   }
 }
+.link--new-window {
+  display: inline-block;
+  padding-right: 18px;
+  position: relative;
+  &:after {
+    background-color: $black;
+    content: "";
+    -webkit-mask-image: url($assets-icon-new-window-svg);
+    mask-image: image-url("icon-new-window.svg");
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 50%;
+    right: 2px;
+    transform: translateY(-50%);
+  }
+}
+.link--green {
+  color: $dark-green;
+  &:hover {
+    color: $black;
+    text-decoration: underline;
+  }
+  @media only screen and (max-width: $xsmall-screen) {
+    &:hover, &:active {
+      text-decoration: none;
+    }
+  }
+  &.link--new-window {
+    &:after {
+      background-color: $dark-green;
+    }
+    &:hover {
+      &:after {
+        background-color: $black;
+      }
+    }
+  }
+}
+
+.link--green {
+  color: $dark-green;
+  text-decoration: underline;
+  &:hover {
+    color: $black;
+    text-decoration: none;
+  }
+  @media only screen and (max-width: $xsmall-screen) {
+    &:hover, &:active {
+      text-decoration: none;
+    }
+  }
+}
+
+.link--no-underline {
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea,
+a {
+  &:focus {
+    color: inherit;
+    outline-offset: 1px;
+    outline-color: $black;
+    outline-style: auto;
+    outline-width: 1px;
+    z-index: 10;
+  }
+}
+
+// Works with JS to determine if a user
+// is tabbing throught the interface
+body:not(.user-is-tabbing) {
+  button,
+  input,
+  select,
+  textarea,
+  a {
+    outline: none;
+  }
+}
+
+.link-icon {
+  display: inline-flex;
+  align-items: center;
+}
 .links--underline {
   &:hover, a:hover {
     text-decoration: underline;
@@ -196,22 +270,19 @@ a {
 }
 .button, %button {
   @include transition(all 100ms linear);
-  background-color: $bright-green;
-  background-image: url($assets-button-wide-crop-png);
-  background-size: 508px;
-  background-position: center;
+  background-color: $dark-green;
   border: none;
   color: $white;
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
   line-height: 1;
-  padding: 1.1em 1.25em;
+  padding: 17px 20px;
   text-align: center;
   @extend %border-radius--uneven;
   &:hover, &:focus {
-    background-color: darken($bright-green, 7%);
-    border-color: darken($bright-green, 7%);
+    background-color: darken($dark-green, 7%);
+    border-color: darken($dark-green, 7%);
     color: $white;
     text-decoration: none !important;
   }
@@ -232,6 +303,15 @@ a {
   }
   @media only screen and (min-width: $medium-screen) {
     font-size: 24px;
+  }
+}
+.button--dark {
+  background-color: $dark-green;
+  background-image: none;
+  font-weight: bold;
+  font-size: 18px;
+  &:hover, &:focus {
+    background-color: darken($dark-green, 7%);
   }
 }
 .button--outline,
@@ -265,7 +345,10 @@ a {
   padding: 5px 10px;
 }
 .button--narrow {
-  padding: 10px 15px;
+  padding: 12px 20px;
+  @media only screen and (min-width: $small-screen) {
+    padding: 10px 15px;
+  }
 }
 .button--long {
   padding: 15px 25px;
@@ -304,6 +387,10 @@ a {
   }
 }
 
+.icon-search--allergen {
+  font-size: 14px;
+}
+
 .hide-iframe {
   max-height: 0px !important;
   overflow: hidden;
@@ -321,9 +408,6 @@ a {
   padding: 3px;
   position: relative;
   text-decoration: none;
-  &:focus {
-    outline:0;
-  }
   @media only screen and (min-width: $small-screen) {
     max-width: 60%;
   }
@@ -344,8 +428,13 @@ a {
     height: 100%;
     z-index: 0;
     transition: left .5s;
+    @media screen and (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
   }
   .switch-button__option {
+    background-color: transparent;
+    border: 0;
     font-size: 16px;
     color: $white;
     flex: 1;
@@ -357,20 +446,36 @@ a {
       font-size: 18px;
       padding: 5px 50px;
     }
-    &.switch-button__option--right {
+    @media screen and (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+    &.switch-button__option--online {
       color: $dark-green;
     }
   }
   &.switch-button--switched {
     .switch-button__option {
       color: $dark-green;
-      &.switch-button__option--right {
+      &.switch-button__option--online {
         color: $white;
       }
     }
     .switch-button__toggle {
       left: 50%;
     }
+  }
+}
+
+.skip-to-content-link,
+.skip-to-where-to-buy-link {
+  position: absolute;
+  transform: translateY(-100%);
+  transition: none;
+  z-index: 1;
+  &:focus {
+    left: 20px;
+    top: 20px;
+    transform: translateY(0);
   }
 }
 
@@ -390,11 +495,15 @@ body {
   color: $black;
 }
 .reviews {
+  margin-top: 20px;
   i {
     color: $dark-green;
   }
   .empty {
     color: #B0BB91;
+  }
+  @media only screen and (min-width: $small-screen) {
+    margin-top: 10px;
   }
 }
 hr, .hr--green {
@@ -507,8 +616,8 @@ _:-ms-fullscreen, :root {
   background-color: rgba($red, 0.9);
 }
 .flash-alert--info {
-  background-color: $green;
-  background-color: rgba($green, 0.8);
+  background-color: $dark-green;
+  background-color: rgba($dark-green, 0.8);
 }
 
 .js-expandable__container {
@@ -525,6 +634,9 @@ _:-ms-fullscreen, :root {
     -webkit-transform: rotate(-5deg);
     -o-transform: rotate(-5deg);
     transform: rotate(-5deg);
+    @media screen and (prefers-reduced-motion: reduce) {
+      transform: none;
+    }
   }
 }
 .-will-rotate--small, %-will-rotate--small {
@@ -534,20 +646,32 @@ _:-ms-fullscreen, :root {
     -webkit-transform: rotate(-1deg) scale(1.05);
     -o-transform: rotate(-1deg) scale(1.05);
     transform: rotate(-1deg) scale(1.05);
+    @media screen and (prefers-reduced-motion: reduce) {
+      transform: none;
+    }
   }
 }
 // ===============
 // MAGNIFIC PLUGIN STYLES
 // ===============
-.mfp-figure:after {
-  background: transparent;
-  box-shadow: none;
+.mfp-figure {
+  figure {
+    padding: 40px 0;
+  }
+  .mfp-img {
+    border: 10px solid $white;
+    padding: 0;
+  }
+  &:after {
+    background: transparent;
+    box-shadow: none;
+  }
 }
 // ===============
 // FORMS
 // ===============
 input[type='text'] {
-  border: 1px solid $white;
+  border: 2px solid $white;
   box-shadow: none;
   &:focus {
     box-shadow: none;
@@ -559,7 +683,7 @@ input[type='text'] {
 select {
   height: 2.4375rem;
   padding: 0.5rem;
-  border: 1px solid #cacaca;
+  border: 1px solid #767676;
   margin: 0 0 1rem;
   font-size: 1rem;
   font-family: inherit;
@@ -633,7 +757,7 @@ select {
 // ===============
 .global-search {
   background-color: transparent;
-  background-image: url($assets-white-texture-transparent-png);
+  background-image: image-url("textures/white-texture-transparent.png");
   background-repeat: repeat;
   display: none;
   position: fixed;
@@ -720,6 +844,11 @@ select {
     max-width: 100px;
   }
 }
+.global-search__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
 // ===============
 // NAVIGATION
 // ===============
@@ -746,13 +875,13 @@ select {
     &.li--search {
       @media only screen and (min-width: $medium-screen) {
         bottom: 10px;
-        font-size: 26px;
         position: absolute;
         right: 10px;
+        font-size: 26px;
       }
     }
     a {
-      color: $dark-green;
+      color: $warm-black;
       @media only screen and (min-width: $medium-screen) {
         color: $black;
       }
@@ -797,21 +926,36 @@ select {
     }
   }
 }
-.logo {
-  margin-top: 10px;
-  margin-bottom: 15px;
+.logo,
+.logo__headline {
   width: 130px;
   @media only screen and (min-width: $small-screen) {
-    margin-top: 15px;
-    margin-bottom: 15px;
     width: 150px;
   }
   @media only screen and (min-width: $medium-screen) {
     width: 180px;
   }
 }
+.logo__content {
+  background-image: url($assets-applegate-logo-svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding-bottom: 53.1914893617021%;
+  width: 100%;
+  @media only screen and (min-width: $small-screen) {
+    background-image: url($assets-applegate-logo-w-tag-svg);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 61.7283950617284%;
+  }
+}
 .hide-claims {
-  .claims, .green-stripe--stripe {
+  .claims,
+  .green-stripe--stripe,
+  .green-stripe--text {
     display: none;
   }
 }
@@ -823,7 +967,7 @@ select {
 .claims {
   @extend %gotham-bold;
   @include transition(all 100ms linear);
-  color: $cream;
+  color: $white;
   padding: 5px 0px;
   p {
     font-size: 11px;
@@ -930,42 +1074,40 @@ select {
 }
 // Navigation Dropdown
 .navigation--menu__dropdown {
+  transition: all 150ms ease-in-out;
   &.toggled {
     @extend %background--texture__white;
     background-position: bottom left;
   }
 }
-.navigation-social {
-  @extend %background--texture__white;
-  display: none;
-  margin-top: -3px;
-  padding: 5px 0;
-  position: absolute;
-  left: 0;
-  white-space: nowrap;
-  z-index: 101;
-  .navigation-social__list {
-    margin: 0;
-    padding: 0;
+
+.navigation-social__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navigation-social__list-item {
+  text-align: center;
+  .fa {
+    font-size: 50px;
+    line-height: 1.2;
   }
-  .navigation-social__list-item {
+  .icon-medium,
+  .icon-tiktok {
+    font-size: 42px;
+    line-height: 1.2;
+  }
+  a {
+    color: $warm-black;
     display: block;
-    float: left;
-    margin: 0;
-    padding: 0;
-    width: 50%;
-    text-align: center;
-    a {
-      color: $warm-black;
-      display: block;
-      padding: 10px;
-      &:hover {
-        color: $dark-green;
-      }
+    padding: 10px;
+    &:hover {
+      color: $dark-green;
     }
   }
 }
-.navigation--products {
+
+.navigation-dropdown {
   @extend %background--texture__white;
   background-position: 100%;
   display: none;
@@ -1005,13 +1147,13 @@ select {
   height: 100%;
   width: 100%;
   right: 0;
-  @include transition(all 0.6s ease-in-out);
+  @include transition(all 0.4s ease-in-out);
   .-extended & {
     right: 100%;
   }
 }
 .mobile--side-canvas {
-  @include transition(all 0.6s ease-in-out);
+  @include transition(all 0.4s ease-in-out);
   @extend %background--texture__white;
   display: none;
   position: absolute;
@@ -1034,46 +1176,47 @@ select {
     }
   }
 }
-// @media only screen and (max-width: $small-screen) {
-  .mobile--nav {
-    .mobile--nav__claims {
+.mobile--nav__icon {
+  fill: $off-black;
+  width: 27px;
+}
+.mobile--nav {
+  .mobile--claims {
+    display: none;
+  }
+  .-nav & {
+    display: block;
+  }
+  .-search & {
+    display: block;
+    .mobile--nav__list {
       display: none;
     }
-    .-nav & {
-      display: block;
-    }
-    .-search & {
-      display: block;
-      .mobile--nav__list {
-        display: none;
-      }
-    }
-    .-claims & {
-      display: block;
-      .mobile--nav__search,
-      .mobile--nav__divider,
-      .mobile--nav__list {
-        display: none;
-      }
-      .mobile--nav__claims {
-        display: block;
-      }
-    }
   }
-  .mobile--filter {
-    .-filter & {
+  .-claims & {
+    display: block;
+    .mobile--nav__search,
+    .mobile--nav__divider,
+    .mobile--nav__list {
+      display: none;
+    }
+    .mobile--claims {
       display: block;
     }
   }
-// }
+}
+.mobile--filter {
+  .-filter & {
+    display: block;
+  }
+}
+
 // =============
 // TEXTURES
 // =============
 .page-rip {
+  @extend %background--cream;
   background-color: #F3EDDB;
-  background-image: url($assets-cream-jpg);
-  background-size: 450px;
-  background-repeat: repeat;
   position: relative;
   padding-bottom: 40px;
   padding-top: 40px;
@@ -1145,7 +1288,7 @@ select {
     position: absolute;
     bottom: 0px;
     height: 30px;
-    background-image: url($assets-cream-top-png);
+    background-image: url($assets-cream-top-png);;
     background-size: 600px;
     background-repeat: repeat-x;
     // fixing stray line from background repeat
@@ -1159,7 +1302,7 @@ select {
   }
 }
 .green-stripe--stripe {
-  background-color: #62802c;
+  background-color: $dark-green;
   color: $white;
   font-family: $kapra;
   position: absolute;
@@ -1175,12 +1318,12 @@ select {
     z-index: 4;
   }
   &:before {
-    background-image: url($assets-greener-stripe-top-png);
+    background-image: url($assets-dark-green-stripe-top-png);
     top:-3px;
     background-size: 210px;
   }
   &:after {
-    background-image: url($assets-greener-stripe-bottom-png);
+    background-image: url($assets-dark-green-stripe-bottom-png);
     bottom:-7px;
     background-size: 558px;
   }
@@ -1199,12 +1342,15 @@ select {
   background: none;
 }
 .home-hero__banner {
+  margin-bottom: 40px;
   padding: 10px 10px 0;
   position: relative;
   &:last-child {
+    margin-bottom: 0;
     padding-bottom: 10px;
   }
   @media only screen and (min-width: $small-screen) {
+    margin: 0;
     padding: 0;
     &:last-child {
       padding-bottom: 0;
@@ -1247,6 +1393,7 @@ select {
 }
 .home-hero__headline {
   @extend %kapra;
+  color: $white;
   font-size: 28px;
   text-transform: uppercase;
   margin: 0 auto;
@@ -1261,20 +1408,28 @@ select {
     width: 70%;
     text-shadow: 3px 3px 10px rgba(0,0,0, .5);
   }
+  &.home-hero__headline--mobile {
+    display: none;
+  }
 }
 .home-hero__copy {
   display: none;
+}
+.hero--gradient {
+  @extend .padding-ratio;
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 60%);
 }
 .hero-banner__cta {
   background-color: $dark-green;
   color: $white;
   display: inline-block;
   font-family: $populaire;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   letter-spacing: 3px;
   line-height: 1;
-  padding: 10px 10px 12px;
+  padding: 15px 15px 17px;
   position: relative;
   transition: all 400ms;
   text-transform: uppercase;
@@ -1300,7 +1455,7 @@ select {
     right: -4px;
     width: 4px;
   }
-  &:hover, &:focus {
+  &:hover {
     background-color: $bright-green;
     border-color: $bright-green;
     color: $white;
@@ -1310,6 +1465,9 @@ select {
     &:after {
       background-image: image-url("button-right-edge.png");
     }
+  }
+  &:focus {
+    outline-offset: -1px;
   }
 }
 .home-hero__jump-nav-container {
@@ -1353,7 +1511,7 @@ select {
 }
 .home-hero--light-tear {
   &:before {
-    background-image: image-url("textures/cream-half-size/light-cream-top.png");
+    background-image: url($assets-cream-top-png);;
   }
 }
 .home-images {
@@ -1364,6 +1522,7 @@ select {
 }
 .home-video {
   max-width: 330px;
+  width: 100%;
 }
 .home-hero__banner--alt {
   padding: 20px 10px;
@@ -1388,12 +1547,20 @@ select {
   }
   .home-hero__headline {
     color: $dark-green;
+    display: none;
     font-size: 36px;
     margin: 0;
     text-align: left;
     text-shadow: unset;
     @media screen and (min-width: $small-screen) {
+      display: block;
       font-size: 42px;
+    }
+    &.home-hero__headline--mobile {
+      display: block;
+      @media screen and (min-width: $small-screen) {
+        display: none;
+      }
     }
   }
   .home-hero__text {
@@ -1438,6 +1605,12 @@ select {
       font-size: 18px;
     }
   }
+}
+.applegatarian-section--top-narrow {
+  padding-top: 20px;
+}
+.applegatarian-section--top-0 {
+  padding-top: 0;
 }
 .applegatarian-section__headline {
   color: $red;
@@ -1661,14 +1834,18 @@ input:disabled {
     @include transition(background-color 100ms linear);
     display: inline-block;
     &:hover {
-      background-color: rgba($bright-green, 0.2);
+      background-color: rgba($dark-green, 0.2);
     }
   }
   a, em.current {
-    padding: 5px 10px;
+    padding: 10px 12px;
+  }
+  .previous_page,
+  .next_page {
+    font-size: 20px;
   }
   .current {
-    background-color: rgba($bright-green, 0.6);
+    background-color: $dark-green;
     color: $white;
   }
   .disabled {
@@ -1721,21 +1898,33 @@ input:disabled {
   color: $white;
   display: inline-flex;
   font-size: 20px;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  opacity: 0.7;
-  width: 40px;
-  text-align: center;
   height: 40px;
+  justify-content: center;
+  margin: 0 10px 0 0;
+  padding: 0;
+  text-align: center;
+  width: 40px;
   .fa {
     vertical-align: bottom;
+  }
+  @media only screen and (min-width: $small-screen) {
+    margin: 0;
+  }
+}
+.social-inline--right {
+  @extend .text-right;
+  .social-inline__item {
+    margin: 0 0 0 10px;
+    @media only screen and (min-width: $small-screen) {
+      margin: 0;
+    }
   }
 }
 .breadcrumb {
   margin-bottom: 10px;
   a {
     @extend .link--green;
+    text-decoration: none;
   }
   @media only screen and (max-width: $small-screen) {
     margin-top: 20px;
@@ -1748,36 +1937,40 @@ input:disabled {
   }
   @media only screen and (max-width: $xsmall-screen) {
     font-size: 12px;
+    margin-top: 25px;
+    margin-bottom: 20px;
     i {
       display: none;
     }
     a {
-      background-color: $green;
+      background-color: $dark-green;
       color: $white;
-      padding: 5px;
+      padding: 8px 8px 8px 5px;
       position: relative;
       z-index: 1;
-      margin-right:6px;
+      margin-right: 15px;
       margin-left: 9px;
       &:before {
         content: "";
         position: absolute;
-        background-image:image-url('breadcrumb-left.png');
-        background-size: 12px 25px;
-        width: 12px;
-        height: 25px;
-        left: -10px;
+        background-image:image-url('icon-breadcrumb.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 15px;
+        height: 31px;
+        left: -13px;
         top: 0;
       }
       &:after {
         content: "";
         position: absolute;
-        background-image:image-url('breadcrumb-right.png');
-        background-size: 8px 25px;
-        width: 8px;
-        height: 25px;
+        background-image:image-url('icon-breadcrumb.svg');
+        background-size: cover;
+        background-position: top right;
+        width: 14px;
+        height: 31px;
         top: 0;
-        right: -8px;
+        right: -13px;
       }
     }
   }
@@ -1815,14 +2008,14 @@ input:disabled {
   padding: 0;
   a {
     color: $black;
-    background-color: rgba($bright-green, 0.4);
+    background-color: rgba($dark-green, 0.4);
     margin-bottom: 10px;
     &.active {
       color: $white;
-      background-color: $bright-green;
+      background-color: $dark-green;
     }
     &:hover, &:focus {
-      background-color: $bright-green;
+      background-color: $dark-green;
       color: $white;
       text-decoration: none;
     }
@@ -1854,17 +2047,6 @@ input:disabled {
 .product--list__button {
   position: relative;
   width: 100%;
-}
-.channelsight-logo {
-  width: 137px;
-  max-width: 100%;
-}
-.channelsight-logo--jet {
-  max-width: 75px;
-}
-.channelsight-container {
-  max-height: 80px;
-  position: relative;
 }
 .logo-wrapper {
   position: absolute;
@@ -2037,8 +2219,8 @@ input:disabled {
 .product--info__container {
   @media only screen and (max-width: $small-screen) {
     background-color: rgba($white, 0.3);
-    border-top: 1px solid rgba($green, 0.4);
-    border-bottom: 1px solid rgba($green, 0.4);
+    border-top: 1px solid rgba($dark-green, 0.4);
+    border-bottom: 1px solid rgba($dark-green, 0.4);
     margin-top: 20px;
   }
 }
@@ -2058,10 +2240,10 @@ input:disabled {
   }
 }
 .product--related {
+  align-items: end;
+  display: flex;
   height: 156px;
   text-align: center;
-  display: table-cell;
-  vertical-align: bottom;
   @media only screen and (max-width: $xsmall-screen) {
     height: 124px;
   }
@@ -2224,52 +2406,6 @@ input:disabled {
   }
 }
 
-// Buynow Ecommerce PAGE
-.products_with_vendors {
-  .js-vendor__link {
-    @extend .link--green;
-  }
-  .js-vendor__container {
-    display: none;
-  }
-  .js-channelsight.button {
-    display: none;
-  }
-  .button--vendors {
-    background-image: none;
-    background-color: $white;
-    margin: 0;
-    padding: 8px 35px 8px 15px;
-    position: relative;
-    &:before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: 15px;
-      border-left: 10px solid $dark-green;
-      border-top: 10px solid transparent;
-      border-bottom: 10px solid transparent;
-      transform: translateY(-50%);
-    }
-    &:after {
-      content: '';
-      position: absolute;
-      right: 20px;
-      top: 50%;
-      border-left: 5px solid #fff;
-      border-top: 5px solid transparent;
-      border-bottom: 5px solid transparent;
-      transform: translateY(-50%);
-    }
-    &:hover {
-      box-shadow: 0 0 15px rgba($dark-green, .6);
-    }
-    img {
-      width: 80%;
-    }
-  }
-}
-
 // ===============
 // JOBS PAGES
 // ===============
@@ -2358,7 +2494,7 @@ input:disabled {
   &:before {
     @extend %icon;
     @include transition(all 100ms linear);
-    color: $green;
+    color: $dark-green;
     font-size: 40px;
     position: absolute;
       top: 0;
@@ -2382,6 +2518,9 @@ input:disabled {
     &:hover {
       &:before {
         transform: translateY(-50%) rotate(-5deg);
+        @media screen and (prefers-reduced-motion: reduce) {
+          transform: translateY(-50%);
+        }
       }
     }
   }
@@ -2414,6 +2553,9 @@ input:disabled {
     &:hover {
       &:before {
         transform: translateY(-60%) rotate(-5deg);
+        @media screen and (prefers-reduced-motion: reduce) {
+          transform: translateY(-60%);
+        }
       }
     }
   }
@@ -2429,6 +2571,9 @@ input:disabled {
   }
   p {
     margin-bottom: 15px;
+  }
+  img {
+    @extend .img-fluid;
   }
 }
 .pinterest-align {
@@ -2449,6 +2594,37 @@ input:disabled {
   left: 50%;
   margin-left: -68px;
   margin-top: -45px;
+}
+.footer-signup {
+  background-color: rgba($white, 0.3);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  @media only screen and (min-width: $medium-screen) {
+    margin-bottom: 0;
+  }
+
+  .newsletter__hint, .sms_signup__hint {
+    .success,
+    .error {
+      background-image: image-url("textures/button-wide-crop.png");
+      border-radius: 3px;
+      margin: 0;
+      padding: 5px 10px;
+    }
+    .success {
+      background-color: $dark-green;
+      color: $white;
+    }
+    .error {
+      background-color: $red;
+      color: $white;
+    }
+  }
+}
+.footer-signup__head {
+  font-family: $kapra;
+  font-size: 24px;
 }
 .footer--links {
   a {
@@ -2527,31 +2703,15 @@ input:disabled {
 }
 
 .carousel--product {
-  .slick-next, .slick-prev {
-    @extend %button;
-    background-color: $bright-green;
-    border-radius: 0;
-    right: -10px;
-    width: 20px;
-    height: 60px;
-    opacity: .75;
-    &:before {
-      font-size: 20px;
-      margin-top: -3px;
-      margin-left: -2px;
-      opacity: 1;
-    }
-    @media only screen and (min-width: $small-screen) {
-      right: -15px;
-      width: 15px;
-      height: 30px;
-    }
-  }
-  .slick-prev {
-    left: -10px;
-    @media only screen and (min-width: $small-screen) {
-      left: -15px;
-    }
+  .slick-next:not(:focus):not(:active),
+  .slick-prev:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
   }
   .slick-dots {
     position: relative;
@@ -2560,13 +2720,13 @@ input:disabled {
     li {
       button {
         &:before {
-          color: $bright-green;
+          color: $dark-green;
         }
       }
       &.slick-active {
         button {
           &:before {
-            color: $bright-green;
+            color: $dark-green;
           }
         }
       }
@@ -2581,6 +2741,7 @@ input:disabled {
   position: relative;
 }
 .carousel--text__headline {
+  color: $white;
   @extend %kapra;
   text-transform: uppercase;
   line-height: 1.1;
@@ -2613,7 +2774,7 @@ input:disabled {
 .carousel__cta {
   @extend .carousel--text__link;
   @media only screen and (max-width: $small-screen) {
-    background-color: $bright-green;
+    background-color: $dark-green;
     background-image: image-url("textures/button-texture.png");
     background-size: 280px;
     background-position: center;
@@ -2621,8 +2782,8 @@ input:disabled {
     border-image: image-url("textures/button-texture.png");
     padding: 0px 10px;
     &:hover, &:focus {
-      background-color: darken($bright-green, 7%);
-      border-color: darken($bright-green, 7%);
+      background-color: darken($dark-green, 7%);
+      border-color: darken($dark-green, 7%);
       color: $white;
     }
     .home-hero & {
@@ -2909,7 +3070,7 @@ input:disabled {
   .hint {
     .success,
     .error {
-      background-image: url($assets-button-wide-crop-png);
+      background-image: image-url("textures/button-wide-crop.png");
       border-radius: 3px;
       margin: 5px 0;
       padding: 5px 10px;
@@ -2959,26 +3120,6 @@ input:disabled {
 }
 
 // ===============
-// Modal Styles
-// ===============
-
-.modal {
-  @extend %background--texture__white;
-  .modal-header {
-    border: 0;
-    padding: 20px 20px 0;
-  }
-  .modal-footer {
-    background: none;
-    border: 0;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    padding: 0 20px 20px;
-  }
-}
-
-// ===============
 // Locator Styles
 // ===============
 
@@ -3000,7 +3141,6 @@ input:disabled {
 // Ribbon Banner (over hero)
 // ================
 .hero-ribbon__container {
-  @extend .columns !optional;
   position: absolute;
   width: 100%;
   bottom: 45px;
@@ -3022,7 +3162,7 @@ input:disabled {
 .hero-ribbon {
   background-color: #FFF;
   border: 1px solid $yellow;
-  color: $bright-green;
+  color: $dark-green;
   padding: 8px;
   margin: 0 8px;
   text-align:center;
@@ -3108,7 +3248,7 @@ input:disabled {
         font-weight: bold;
       }
       .pr-content-collection-form .pr-media-modal .pr-cross-icon__line {
-        stroke: $bright-green;
+        stroke: $dark-green;
       }
       .pr-rd-reviewer-type,
       .pr-rd-bottomline {
@@ -3118,42 +3258,6 @@ input:disabled {
   }
 }
 
-// ===============
-// PowerTip Styles
-// ===============
-#powerTip {
-  @extend %background--texture__white;
-  background-color: #FFF;
-  border-radius: 0;
-  color: $black;
-  width: 300px;
-  &.s:before {
-    width: 0;
-    height: 0;
-    border-bottom: 10px solid $white;
-    border-right: 10px solid transparent;
-    border-left: 10px solid transparent;
-  }
-  @media only screen and (max-width: $medium-screen) {
-    width: 100%;
-    position: fixed;
-    top: 0 !important;
-    left: 0 !important;
-    height: 100%;
-  }
-  p {
-    white-space: normal;
-  }
-}
-// ===============
-// FOUNDATION OVERRIDES
-// ===============
-.reveal-overlay {
-  overflow-y: hidden;
-}
-body.is-reveal-open {
-  overflow: auto;
-}
 // ================
 // STYLE GUIDE
 // ================
@@ -3192,7 +3296,7 @@ body.is-reveal-open {
 }
 .style-guide-menu {
   a.active {
-    background-color: $green;
+    background-color: $dark-green;
     color: #FFF;
     font-weight: normal;
   }
