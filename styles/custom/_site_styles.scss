@@ -1682,6 +1682,12 @@ select {
   display: inline-block;
   max-width: 100%;
 }
+.product--category__img {
+  width: 140px;
+  .navigation--product-categories & {
+    width: 110px;
+  }
+}
 .product--coupon {
   background-color: $white;
   border: 2px solid $white;

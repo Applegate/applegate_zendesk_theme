@@ -13063,6 +13063,14 @@ select.bordered {
   max-width: 100%;
 }
 
+.product--category__img {
+  width: 140px;
+}
+
+.navigation--product-categories .product--category__img {
+  width: 110px;
+}
+
 .product--coupon {
   background-color: #fff;
   border: 2px solid #fff;
