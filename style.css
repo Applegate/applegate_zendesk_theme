@@ -49,207 +49,18 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'applegate-icons';
-  src: url("https://applegate.com/help-page-assets/fonts/applegate-icons/applegate-icons.eot");
-  src: url("https://applegate.com/help-page-assets/fonts/applegate-icons/applegate-icons.eot?#iefix") format("embedded-opentype"), url("https://applegate.com/help-page-assets/fonts/applegate-icons/applegate-icons.woff") format("woff"), url("https://applegate.com/help-page-assets/fonts/applegate-icons/applegate-icons.ttf") format("truetype"), url("https://applegate.com/help-page-assets/fonts/applegate-icons/applegate-icons.svg?#applegate-icons") format("svg");
-  display: inline-block;
-  font-weight: normal;
-  font-style: normal;
+.icon-search {
+  max-width: 14px;
 }
 
-[class^="icon-"], [class*=" icon-"], .icon, .collapsible-sidebar-toggle::after, .collapsible-nav-toggle::after, .actions .dropdown-toggle::before, .share a::before, .attachments .attachment-item::before, .article-vote::before, .recent-activity-item-comment span::before, .search::before, .recipe-features__link:before {
-  display: inline-block;
-  font-family: 'applegate-icons' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.navigation-social__icon--mobile {
+  width: 27px;
 }
 
-[class^="icon-"]:before, [class*=" icon-"]:before, .icon:before, .actions .dropdown-toggle:before, .share a:before, .attachments .attachment-item:before, .article-vote:before, .recent-activity-item-comment span:before, .search:before, .recipe-features__link:before {
-  font-family: 'applegate-icons' !important;
-}
-
-.icon-meatballs:before {
-  content: "\e927";
-}
-
-.icon-snacking:before {
-  content: "\e926";
-}
-
-.icon-cheese-slice:before {
-  content: "\e925";
-}
-
-.icon-barn:before {
-  content: "\e924";
-}
-
-.icon-dairy-free:before {
-  content: "\e901";
-}
-
-.icon-gluten-free:before {
-  content: "\e913";
-}
-
-.icon-casein-free:before {
-  content: "\e900";
-}
-
-.icon-search:before {
-  content: "\e903";
-}
-
-.icon-menu:before {
-  content: "\e904";
-}
-
-.icon-cross:before {
-  content: "\e905";
-}
-
-.icon-traditional-italian:before {
-  content: "\e90f";
-}
-
-.icon-hot-dogs:before {
-  content: "\e90e";
-}
-
-.icon-dinner-sausage:before {
-  content: "\e90d";
-}
-
-.icon-deli-meat:before {
-  content: "\e90c";
-}
-
-.icon-corn-dogs:before {
-  content: "\e90b";
-}
-
-.icon-grilled-chicken-strips:before, .icon-chicken-strips:before {
-  content: "\e90a";
-}
-
-.icon-cheese:before {
-  content: "\e909";
-}
-
-.icon-burgers:before {
-  content: "\e908";
-}
-
-.icon-breakfast-sausage:before {
-  content: "\e907";
-}
-
-.icon-breaded-chicken:before {
-  content: "\e906";
-}
-
-.icon-bacon:before {
-  content: "\e910";
-}
-
-.icon-video-play {
-  position: relative;
-}
-
-.icon-video-play:before {
-  content: "";
-  color: #e9412c;
-}
-
-.icon-video-play:after {
-  content: "";
-  color: #000;
-  position: absolute;
-  left: 0;
-}
-
-.icon-wheat:before {
-  content: "\e913";
-}
-
-.icon-appetizers:before {
-  content: "\e914";
-}
-
-.icon-breakfasts:before {
-  content: "\e915";
-}
-
-.icon-entrees:before {
-  content: "\e916";
-}
-
-.icon-salads:before {
-  content: "\e917";
-}
-
-.icon-side-dishes:before {
-  content: "\e918";
-}
-
-.icon-soups:before {
-  content: "\e919";
-}
-
-.icon-sweets:before {
-  content: "\e91a";
-}
-
-.icon-reduced-sodium:before {
-  content: "\e91b";
-}
-
-.icon-rbgh-free:before {
-  content: "\e91c";
-}
-
-.icon-sugar-free:before {
-  content: "\e91d";
-}
-
-.icon-grass-fed:before {
-  content: "\e91e";
-}
-
-.icon-turkey:before {
-  content: "\e91f";
-}
-
-.icon-pig:before {
-  content: "\e920";
-}
-
-.icon-cow:before {
-  content: "\e921";
-}
-
-.icon-chicken:before {
-  content: "\e922";
-}
-
-.icon-whole30-approved:before,
-.icon-whole30:before {
-  content: "\e923";
-}
-
-.icon-medium:before {
-  content: "\e928";
-}
-
-.icon-tiktok:before {
-  content: "\e929";
+.mobile-social-nav__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /***** Base *****/
@@ -12280,6 +12091,7 @@ select.bordered {
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.3);
   display: none;
   margin-left: -45%;
+  padding: 10px 10px 20px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -12322,7 +12134,7 @@ select.bordered {
 }
 
 .modaltip .modaltip__column {
-  background: url(image_path("line-green-vertical.svg")) no-repeat top left;
+  background: url("https://applegate.com/help-page-assets/line-green-vertical.svg") no-repeat top left;
   padding: 0 20px;
 }
 
@@ -13030,6 +12842,12 @@ select.bordered {
 
 .vertical-align-padding {
   padding: 30px;
+}
+
+.product-category__img {
+  vertical-align: bottom;
+  max-width: 135px;
+  max-height: 50px;
 }
 
 .product--category__wrap {
