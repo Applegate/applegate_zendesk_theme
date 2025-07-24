@@ -35,11 +35,10 @@
                           <p><a href="https://applegate.com/products/breakfast-sandwich/category">Breakfast Sandwich</a></p>
                           <p><a href="https://applegate.com/products/breakfast-sausage/category">Breakfast Sausage</a></p>
                           <p><a href="https://applegate.com/products/burgers/category">Burgers</a></p>
-                          <p><a href="https://applegate.com/products/wall-deli-cheese/category">Cheese</a></p>
                           <p><a href="https://applegate.com/products/wall-deli-meat/category">Deli Meat</a></p>
+                          <p><a href="https://applegate.com/products/dinner-sausage/category">Dinner Sausage</a></p>
                       </div>
                       <div class="col-lg-6">
-                          <p><a href="https://applegate.com/products/dinner-sausage/category">Dinner Sausage</a></p>
                           <p><a href="https://applegate.com/products/frittata-bites/category">Frittata Bites</a></p>
                           <p><a href="https://applegate.com/products/chicken-strips/category">Grilled Chicken Strips</a></p>
                           <p><a href="https://applegate.com/products/hot-dogs/category">Hot Dogs</a></p>
@@ -75,7 +74,7 @@
           </div>
           <div class="row margin-bottom-md">
             <div class="col-md-8">
-              <p class="small margin-bottom-xxs"><a href="https://applegate.com/site_map">Site Map</a> | <a href="https://applegate.zendesk.com/hc/en-us/articles/360043759172-Applegate-s-45-Day-Satisfaction-Guarantee">Applegate's 45 Day Satisfaction Guarantee</a> | <a href="https://applegate.com/brand-assets">Brand Assets</a></p>
+              <p class="small margin-bottom-xxs"><a href="https://applegate.com/site_map">Site Map</a> | <a href="https://applegate.zendesk.com/hc/en-us/articles/360043759172-Applegate-s-45-Day-Satisfaction-Guarantee">Applegate's 45 Day Satisfaction Guarantee</a></p>
               <p class="small margin-bottom-xxs"><a href="https://applegate.com/terms-of-use">Terms &amp; Conditions</a> | <a href="https://applegate.com/privacy-policy">Privacy Policy</a> | <a href="https://applegate.com/online-cookie-policy">Online Cookie Policy</a></p>
               <p class="small margin-bottom-xxs"><a href="https://www.hormelfoods.com/ccpa-footer-california-privacy-policy" target="_blank" class="link--new-window">California Privacy Policy</a> | <a href="https://www.hormelfoods.com/ccpa-footer-california-collection-notice" target="_blank" class="link--new-window">California Collection Notice</a> | <a href="https://applegate.zendesk.com/hc/en-us/articles/4407304139284">Website Accessibility</a> | <a href="https://www.hormelfoods.com/ccpa-footer-do-not-sell-my-info" target="_blank" class="link--new-window"><strong>Do Not Sell My Info</strong></a></p>
             </div>
@@ -340,3 +339,24 @@
     Public.app.init();
   });
 </script>
+
+<!-- start GDPR -->
+<link href="https://scripts.hormel.com/css/applegate-gdpr.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://scripts.hormel.com/js/gdpr-v3.js"></script>
+<script>
+  window.jQuery(function () {
+    window.gdprPageSetup({
+      scriptLocation: 'https://scripts.hormel.com/js/cookies-script-v3.js'
+      , prepScriptLocation: 'https://scripts.hormel.com/js/prep-script.js'
+      , gtmNumber: 'GTM-N82B3FR'
+      , cookieTypes: [
+        {
+          name: "all",
+          label: "All Site Cookies"
+        }
+      ]
+    })
+  })
+</script>
+<!-- end GDPR -->
