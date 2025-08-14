@@ -938,7 +938,7 @@ ul {
 .blocks-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   list-style: none;
   padding: 0;
 }
