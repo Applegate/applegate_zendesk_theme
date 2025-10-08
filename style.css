@@ -14915,9 +14915,16 @@ input#query {
   }
 }
 
+.contact-options {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
 .contact-options__item {
-  display: inline-block;
   margin: 0 10px;
+  min-width: 130px;
+  text-align: center;
 }
 
 .contact-options__item p {

@@ -51,6 +51,12 @@ To publish this theme to production, follow these steps.
 * Commit all your changes.
 * Go to https://applegate.zendesk.com/theming/workbench
 * In the Applegate theme box, click the three dots in the bottom right corner and choose 'Update from Github'.
+  * If 'Update from Github' is not present:
+    * Click the 'Add Theme' button at the top right of the page
+    * Click 'Add from Github' and pass in the Github URL
+    * Specify branch and click 'Import'
+    * Once imported, your theme will now appear within the 'Theme Library'
+    * To make this theme live, click the three dots and select 'Set as Live Theme'
 * A modal will appear and you can check the box that says 'Keep theme settings' unless you need to overwrite these and click 'Update'.
 * A message will appear saying whether it was successful.
 
